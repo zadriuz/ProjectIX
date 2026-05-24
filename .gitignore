@@ -1,0 +1,11 @@
+# Godot 4+ Jenova specific ignores
+.vs/
+.vscode/
+.godot/
+.jenova/
+Jenova/
+/vc*.pdb
+Builds/ 
+
+# Paid / licensed game assets (excluded from public repo)
+assets/

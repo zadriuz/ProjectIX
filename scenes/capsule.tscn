@@ -1,0 +1,74 @@
+[gd_scene load_steps=9 format=3 uid="uid://bwi4tyc5olyln"]
+
+[ext_resource type="Script" uid="uid://b20d8ikf5av8x" path="res://scripts/capsule.cpp" id="1_8ffoq"]
+[ext_resource type="Texture2D" uid="uid://di6rbjw8ex3wy" path="res://assets/capsuleTry.png" id="2_8ffoq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mojxo"]
+atlas = ExtResource("2_8ffoq")
+region = Rect2(0, 191, 162, 191)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sar3o"]
+atlas = ExtResource("2_8ffoq")
+region = Rect2(162, 191, 162, 191)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tdrdg"]
+atlas = ExtResource("2_8ffoq")
+region = Rect2(324, 191, 162, 191)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_adsns"]
+atlas = ExtResource("2_8ffoq")
+region = Rect2(486, 191, 162, 191)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1uodv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mojxo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sar3o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tdrdg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_adsns")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.5
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1f21j"]
+radius = 10.575462
+height = 29.72975
+
+[node name="Capsule" type="Area2D"]
+z_index = 2
+texture_filter = 1
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_8ffoq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(2.22, 0.15)
+scale = Vector2(0.1824699, 0.17957929)
+sprite_frames = SubResource("SpriteFrames_1uodv")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+texture_filter = 1
+position = Vector2(3, 2)
+rotation = 0.75049156
+shape = SubResource("CapsuleShape2D_1f21j")
+
+[node name="MapIcon" type="ColorRect" parent="."]
+visibility_layer = 2
+offset_left = -20.0
+offset_top = -22.0
+offset_right = 23.0
+offset_bottom = 21.0
+color = Color(0.84264773, 0.70424664, 0.14163446, 1)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

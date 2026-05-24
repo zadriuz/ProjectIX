@@ -1,0 +1,1848 @@
+[gd_scene load_steps=26 format=3 uid="uid://b3fqn83t5jjhh"]
+
+[ext_resource type="PackedScene" path="res://assets/mediumMap/Tiles_4.tscn" id="1_vtmaf"]
+[ext_resource type="PackedScene" path="res://assets/mediumMap/MedWalls_3.tscn" id="2_wpyd2"]
+[ext_resource type="PackedScene" path="res://assets/mediumMap/Player_2.tscn" id="3_fubp2"]
+[ext_resource type="PackedScene" path="res://assets/mediumMap/Map_Box_1.tscn" id="4_bouvu"]
+[ext_resource type="PackedScene" path="res://assets/mediumMap/ASSETS_MORE_0.tscn" id="5_xtj2x"]
+[ext_resource type="PackedScene" uid="uid://coho7jlivbsex" path="res://scenes/subject_ix.tscn" id="6_wpyd2"]
+[ext_resource type="PackedScene" uid="uid://bwi4tyc5olyln" path="res://scenes/capsule.tscn" id="7_fubp2"]
+[ext_resource type="PackedScene" uid="uid://3wmeddbpsok2" path="res://scenes/portal.tscn" id="8_bouvu"]
+[ext_resource type="Shader" uid="uid://dd33vtprm130l" path="res://scripts/miniMapVignette.gdshader" id="9_xjjcp"]
+[ext_resource type="PackedScene" uid="uid://ce5hx46ngr6a3" path="res://scenes/HUD.tscn" id="9_xtj2x"]
+[ext_resource type="PackedScene" uid="uid://b0jv74c3hl6dw" path="res://scenes/DialogueSystem.tscn" id="10_lq5nj"]
+[ext_resource type="PackedScene" uid="uid://dr20uxcy7dqcm" path="res://scenes/the_cloner.tscn" id="10_ulnpb"]
+[ext_resource type="PackedScene" uid="uid://bhowuxcuwi14" path="res://scenes/speed_boost.tscn" id="11_8i3hw"]
+[ext_resource type="AudioStream" uid="uid://ctlvbhviphkjn" path="res://assets/music/bgm_game2.wav" id="13_d6rps"]
+[ext_resource type="PackedScene" uid="uid://ddmjafhtnsfb1" path="res://scenes/PauseMenu.tscn" id="14_35k4p"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_vtmaf"]
+vertices = PackedVector2Array(967, 2756.9375, 918, 2713.1328, 966.84375, 2713, 1623, 2713, 1676.6797, 2761.9375, 918, 262, 771.6875, 262, 593, 244.9375, 777.2969, 213, 967, 213, 2133, 2393, 2187, 2442, 1932, 2442, 1868, 2419.9375, 1927, 2393, 83, 3082, 83, 3016.3516, 87.6875, 3068, 1943, 1623, 1992, 1227.1563, 1992, 1878, 1943, 1677.2109, 1943, 1227.2109, 1992, 1178.1563, 3023, 314.9375, 3023, 240.0625, 3082, 88, 3082, 598, 3028, 457, 1546.9063, 852.8906, 1541.9063, 1303.3203, 1498.2109, 1162.3125, 1493, 1113.2109, 1493, 907, 3478, 2263, 3532.0938, 1992, 3526.9063, 2453, 3478, 2317, 3478, 1991.3594, 342.6875, 3128, 398, 3128, 461.03906, 3147, 328, 3147.0234, 328, 3132, 2762, 2583.6406, 2826.7734, 2578.6484, 2822.211, 2761.3203, 2762, 2756.3125, 2643, 2682.3281, 2643, 2664.711, 2697, 533, 2697, 918, 2648.3125, 842, 2648, 787.40625, 2648, 587, 2886.9063, 457, 2903, 408, 2995.9297, 328.47656, 3083, 2284.2813, 3083, 2220.7188, 3147, 2198, 3147, 2377, 2648.5, 1533.7422, 2762, 1368, 2762, 1677, 2632, 1677, 2642.789, 1430.9922, 2637, 1368, 2609.4063, 1404.2813, 3663, 1788, 3722, 1683.2734, 3722, 1862, 3651.4063, 1862, 3663, 1721, 3657, 1688.6875, 3635, 1700, 3656.8984, 2708.3125, 3652.0938, 3147, 3608.1328, 3093, 3602.8828, 2762.0938, 2008, 2843.5938, 2057, 2891.3516, 1992, 2886.3594, 1938.6875, 2838.6406, 598, 1563.6875, 652, 1607.1875, 468.3125, 1611.7813, 522, 1557.3594, 3478, 983.3281, 3532, 1032, 3402, 1032, 3352.789, 978.3125, 918, 3033.1094, 972, 3082, 456.40625, 3082, 522, 3027.8984, 3017, 1238, 3017, 1612, 2968, 1558, 2968, 1292.5469, 473.3125, 1482, 522, 1428, 1558, 1943, 1612, 1996.6875, 1482, 1991.6875, 1428.3125, 1943, 3526.3281, 2713.3438, 3147.3125, 2756.9063, 3478, 2713, 3082, 2713, 3347.6875, 1227, 3347.7969, 1173, 3402, 1303, 3352.6797, 1352, 2507, 3027.3594, 2583, 3033.6875, 2632, 3082, 2507, 3082, 2133.6875, 3028, 2057, 652, 2057, 907, 2003, 853, 2003, 646.8672, 1737, 907, 1683, 853, 1683, 1032, 1737, 988.15625, 1938, 1032, 1992, 983.15625, 1097, 2068, 1097, 2442, 1048, 2393, 1048, 2121.3594, 712, 2393, 972.15625, 2442, 918, 2441.8438, 1612, 1802, 1558, 1802, 2632, 2892, 2583, 2892, 1671.6875, 2632, 1623, 2251.789, 1433.3125, 2073, 1482, 2198, 2057, 2632, 2008, 2632, 1173, 848.10156, 1227, 907, 1173, 977.78906, 1227, 1032, 972.5469, 1032, 972, 983.21875, 457, 2903, 522, 2903, 371.2422, 3039.9297, 333, 3003, 333, 2941.6875, 1031.7891, 2068, 983, 2126.3516, 2572.5938, 533, 2572, 587, 2952, 1612, 2903, 1558, 2187, 2068, 2133, 2122, 2008, 2068, 2057, 2122, 2008, 2198, 2057, 2252, 1672, 2252, 972, 2951.6563, 918, 2762, 967, 2903.211, 1938, 1173, 202, 1428, 202.21094, 1482, 3532, 598, 3478, 646.90625, 3028, 651.90625, 2952, 1238, 2898.6406, 1287.5938, 2903, 3147, 3337, 3093, 2893, 179.9375, 2995, 226.0625, 2967, 240.0625, 2838, 267, 2865.9297, 193.47656, 652, 1482, 598, 1357, 2583, 1368, 2637, 1173, 2572, 1441.6875, 3082, 2377, 3061.4922, 2298.6172, 772.5, 88, 718, 179.9375, 718, 110.0625, 116.24219, 2979.9297, 83, 2999.8594, 83, 2953, 143, 2953, 2903, 332, 2967, 321.25, 1868, 2356.6875, 1927, 2327.7969, 2697, 2518, 2637.6484, 2589.8828, 2632, 2453, 398, 3066.6875, 2903.6875, 1227, 2952, 1173, 2583, 2068, 2632, 2068, 2697, 2377, 2632, 2377, 2518, 2198, 148, 3082, 143, 3068, 332, 2781.1016, 347, 2776.1016, 347, 2808, 306.2422, 2914.9297, 271.57813, 2935.7188, 268, 2813, 2833.0781, 408, 2838.0781, 918, 2892.0938, 918, 2903, 1748, 2952, 1753, 1943.6406, 2903, 1992, 2952, 1867, 2952, 1813, 2903, 1813, 2968, 1867, 3093, 2892, 1173, 2833.1563, 1227, 1037.2109, 1861.7891, 983, 1482, 1032, 1813, 2838.1563, 966.78906, 2892, 972, 205.5625, 3107, 210.5625, 3137, 203, 3137, 203, 3112, 3607, 1788, 3597.6406, 1926.3594, 3656.3516, 1931.25, 788, 532.89844, 1032.5938, 473.54688, 1101.3594, 468.6328, 1096.3828, 538.34375, 788.6797, 587.1406, 3093.789, 3051.6484, 3088.9375, 3008, 3273.4531, 3008, 3283.4375, 3058, 88, 2932, 88, 2898.6875, 147.35938, 2903.6406, 143, 2932, 1097, 587, 853, 647, 783.6875, 647, 3532, 1558.6875, 3592, 1553.6875, 3592, 1618, 3468, 1656, 2888, 2160.7188, 2892, 2008.6875, 2952, 2003.6875, 2952, 2198, 2888, 2224.2813, 262, 457, 262, 651.2969, 202.21875, 646.3203, 213, 598, 457, 1113.6406, 522, 1108.6406, 522, 1303, 473.21094, 1162, 392, 2838.6406, 457, 2833.6406, 3348, 1867, 3288, 1753, 3288, 1688.6406, 3353.6406, 1693.6875, 3412, 1723, 3440, 1890, 3412, 1911, 3413, 1996.3516, 3413, 1978, 3468, 1978, 2518, 2826.3594, 2453, 2831.3516, 2453, 2761.3594, 2508.5625, 2694.0313, 2388, 2766.3516, 2388, 2583, 2453, 2583, 2519.2266, 2662, 3412, 1656, 3348.5938, 1623, 3413, 1623, 3440, 1635, 2128.6797, 2967.8906, 2507, 2963.1016, 1672.3125, 2838, 1677.2969, 2968, 1672, 3017, 1616.1016, 2967, 1557.6484, 2899.8828, 733.6875, 918.6406, 728.6172, 852.78125, 907, 848.21094, 907, 918, 658.2031, 1097, 662.78906, 913.5703, 728, 1097, 332, 2518.3281, 457, 2513.3203, 457, 2583.3125, 408, 2567, 712, 1878.3125, 842, 1873.2969, 842, 2122, 712, 2122, 663, 2121.6875, 565.3594, 258.7578, 776.6875, 392, 473, 392, 473, 332.59375, 532, 245.42188, 392, 326.35938, 467.79688, 278, 1736.6797, 1671.7813, 1741.6875, 1802, 2572, 1527.3594, 2578, 1672.3125, 2517, 1523, 3032, 2220.0625, 3032, 2291.25, 2866.4922, 2238.6172, 1032, 652, 1032, 716.78125, 853, 712.1875, 1162, 2898.211, 1162, 2968.2188, 1108, 2957.3281, 3592.2031, 2453, 3596.789, 2632, 3532.5938, 2632, 532.84375, 2126.6875, 528.14844, 1878, 663.3125, 1878, 2507, 1221.3125, 2507, 1286.8438, 2263, 1282.1484, 2263, 1221.8438, 1227, 1813, 1291.8438, 1813, 1286.8438, 2073, 1238, 1867.2109, 3468, 1723, 3607, 1721, 3592.5938, 1992, 967, 408.6875, 918, 408, 690.3594, 193.75781, 657, 180.42188, 593, 175.0625, 657, 109.578125, 565.3594, 161.24219, 472.6797, 88, 3478, 1558, 3532, 1432.4063, 3478, 1482, 3467, 1427.4063, 3413, 1482, 3413, 1352, 3467, 1303, 858, 468, 1027.5938, 403.64063, 967.59375, 1101.3984, 901.3125, 1096.3125, 663, 2446.8438, 712, 1796.6875, 658.3125, 1748, 788, 1748, 841.8594, 1801.6797, 836.8672, 1482, 788, 1482, 3271.6875, 1173, 3223, 1227, 3223, 1097, 3276.6719, 1043.3203, 3147, 1048.3125, 3093, 1097, 3093, 972, 3147, 918, 788, 468, 858, 408, 1607, 332.21094, 1607, 392, 1173, 392, 1173, 213, 1303, 213, 1303, 148, 1368, 148, 1482, 213, 2838, 332, 2762, 267, 2762, 332, 2507, 332, 2713, 277.89844, 2572, 652, 2507.6406, 652, 2453, 468, 2501.3125, 728, 2453, 728, 2453, 652, 2388, 652, 2388, 468, 2507, 468, 1607, 213, 1607, 273, 2388, 788, 2388, 728, 2567, 728, 2567, 793.6406, 2388, 842, 2567, 842, 2567, 907, 2388, 907, 1097, 652, 788, 1162, 728, 1162, 972, 918, 2263, 1172.8438, 2263, 1108, 2507, 1108, 2507, 1173, 2583, 1227.6406, 2572, 1492, 2517, 1492, 2457.8828, 1368, 2572, 1523, 2518, 1812.7891, 2632, 1748, 2697, 1748, 2697, 1813, 2518, 1867, 2838, 1813, 2838, 1748, 2892, 1802, 3413, 1558, 3657, 1618, 3412, 1932, 3348, 1932, 3283, 1867, 3283, 1802, 3478, 2637, 3413, 2637, 3413, 2453, 3478, 2453, 3337, 3058, 3033, 3092.4531, 2773, 2381.8438, 2773, 2008, 2838, 2008, 2837, 2160.0625, 2697, 1867, 2697, 1932, 2632, 1932, 2697, 2068, 2583, 1932, 2518, 1932, 1813, 2507, 1748, 2507, 1748, 2323.211, 1812, 2419.9375, 1932, 2507, 1867, 2507, 1840, 2433.9375, 2258, 2583, 2258, 2453, 2328, 2453, 2311.6719, 2507, 2518, 2068, 2697, 2453, 2762, 2518, 2518, 2518, 2567, 2590.4688, 2567, 2662, 2453, 2518, 2762, 2827, 2697, 2827, 2697, 2892, 2518, 2892, 2518, 2453, 2583, 2453, 2583, 2377, 2518, 2377, 2518, 2252, 196.78906, 1688, 267, 1688, 267, 2263, 212.88281, 1992, 332, 2263, 278, 2312, 1938, 3093, 1938, 3028, 1992, 3082, 2507, 3147, 2133, 3147, 2133, 3082, 1992, 3147, 1813, 3147, 1605.9531, 2997.4375, 1672, 3147, 1368, 3147, 1368, 3022.1484, 1550.3984, 3003, 533, 2632, 408, 2632, 377, 2808, 377, 2818, 392, 2818, 313, 3132, 313, 3112, 336.57813, 3060.7188, 293, 3112, 293, 3102, 143, 3006.6875, 267, 3102, 267, 3107, 148, 3112, 213, 2838, 213, 2813, 268, 2773, 278, 2773, 83, 1992, 83, 1678, 143, 1678, 906.39844, 1162.6328, 842.14844, 1167.5781, 1737, 1221.7891, 1683.3203, 1173, 1688.3125, 1297.6875, 1737, 1352, 1493.2188, 1352, 1352, 1156.6875, 1298.2109, 1108.2109, 1303.2109, 1303, 1352, 1351.7813, 1161.6875, 1346.7813, 1108, 1303, 1108, 1428, 1166.7031, 1482, 1032, 1482, 836.84375, 1428, 2643.3125, 971.78125, 2252.211, 788, 2198, 842, 2198, 652, 2247.211, 598, 2057, 598, 1433, 1623, 1433, 1497.75, 1737.2969, 1488.2422, 1742.2891, 1623, 3337, 2263, 3283, 2317, 3283, 2127, 3337, 2068, 3147, 2068, 3093, 2127, 3093, 1802, 3147, 1802, 1813, 3017, 1487, 3003, 1108, 3017.1484, 2328, 1878, 2328, 1817.7891, 2377, 1867, 788, 1427.6719, 1432.6797, 1802, 1427.6875, 1677, 1562.4531, 2967, 152.40625, 2838, 277.6875, 3003, 2567.5938, 468, 2453, 327, 2518, 1752.3516, 2578, 1747.3594, 2599.6484, 2570.8828, 2893, 116, 2453.1172, 1667.3203, 1487, 2900.4688, 1363, 2962.789, 1363, 2838, 3033, 3061.7734, 2837, 186.25, 2328, 2198, 2377, 2252, 2377, 2507, 2316.6797, 2632, 1867, 2583, 1813, 2583, 1846.9297, 2335.6094, 1812, 2349.5781, 1672, 2583, 1433, 2256.7813, 1433, 2121.789, 1238, 2126.7813, 1173, 1813, 3142.289, 2887.1875, 3093, 2761.3594, 1519.6484, 2880.8828, 533, 2762, 587, 2707.8672, 587, 2578.2969, 332, 2567, 3060.5703, 2205.7734, 2865.5703, 2145.7734, 690.3594, 96.24219, 532, 174.57813, 347.6875, 278, 342.6875, 408.29688, 392, 457, 213, 403.29688, 143, 598, 196.78906, 858.21094, 2057, 403, 2008, 598.10156, 2865.8438, 95.63281, 2713, 88, 2837, 110.0625, 2311.6875, 283.10938, 2263, 327, 2263, 202, 2316.6875, 148.11719, 1992, 153.11719, 1943, 202, 1943, 137, 1992, 88, 1368, 88, 1482, 137, 1813, 326.78906, 1862.3125, 273, 1867.2969, 403, 1813, 457, 2008, 457, 1622.4375, 593.09375, 1677, 652.1328, 1617.4531, 663, 1677, 717, 1173, 717, 1227, 663, 1173, 587, 1227, 533.3125, 457, 581.8672, 408, 537.8906, 408, 852.7969, 3028, 2376.8438, 3468, 1911, 2838, 1867, 2946.7734, 3098.6094, 2903, 2838, 2952.2031, 2892.2031, 3093, 2838, 3028, 2766.3516, 2837, 2231.25, 217.88281, 2312, 202, 907, 403, 907, 403, 1162, 468.21094, 1357, 652, 1303, 652, 1433.3438, 1173, 1623, 1227, 1677, 1943, 1932, 2377, 1932)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7, 8, 9), PackedInt32Array(10, 11, 12, 13, 14), PackedInt32Array(15, 16, 17), PackedInt32Array(18, 19, 20, 21), PackedInt32Array(19, 18, 22, 23), PackedInt32Array(24, 25, 26, 27, 28), PackedInt32Array(29, 30, 31, 32, 33), PackedInt32Array(34, 35, 36, 37), PackedInt32Array(35, 34, 38), PackedInt32Array(39, 40, 41, 42, 43), PackedInt32Array(44, 45, 46, 47, 48, 49), PackedInt32Array(50, 51, 52, 53, 54), PackedInt32Array(28, 55, 56, 57, 24), PackedInt32Array(58, 59, 60, 61), PackedInt32Array(62, 63, 64, 65), PackedInt32Array(63, 62, 66), PackedInt32Array(67, 63, 66, 68), PackedInt32Array(69, 70, 71, 72), PackedInt32Array(70, 69, 73), PackedInt32Array(74, 70, 73, 75), PackedInt32Array(76, 77, 78, 79), PackedInt32Array(80, 81, 82, 83), PackedInt32Array(84, 85, 86, 87), PackedInt32Array(88, 89, 90, 91), PackedInt32Array(92, 93, 94, 95), PackedInt32Array(96, 97, 98, 99), PackedInt32Array(87, 86, 100, 101), PackedInt32Array(102, 103, 104, 105), PackedInt32Array(106, 76, 79, 107), PackedInt32Array(108, 106, 107, 109), PackedInt32Array(110, 111, 91, 90, 112, 113), PackedInt32Array(114, 115, 116, 117, 118), PackedInt32Array(119, 120, 121, 122), PackedInt32Array(121, 120, 123, 124), PackedInt32Array(125, 124, 123, 126), PackedInt32Array(127, 125, 126, 128), PackedInt32Array(129, 130, 131, 132), PackedInt32Array(133, 131, 130, 134, 135), PackedInt32Array(136, 103, 102, 137), PackedInt32Array(138, 116, 115, 139), PackedInt32Array(140, 4, 3, 141), PackedInt32Array(142, 105, 104, 143), PackedInt32Array(144, 81, 80, 145), PackedInt32Array(146, 29, 33, 147), PackedInt32Array(148, 146, 147, 149), PackedInt32Array(148, 149, 150, 151), PackedInt32Array(152, 153, 95, 94, 154, 155, 156), PackedInt32Array(157, 129, 132, 158), PackedInt32Array(159, 50, 54, 160), PackedInt32Array(98, 97, 161, 162), PackedInt32Array(163, 11, 10, 164), PackedInt32Array(165, 163, 164, 166), PackedInt32Array(167, 165, 166, 168), PackedInt32Array(143, 167, 168, 169, 141), PackedInt32Array(170, 93, 92, 171, 172), PackedInt32Array(173, 127, 128, 23, 22), PackedInt32Array(174, 101, 100, 175), PackedInt32Array(176, 89, 88, 177), PackedInt32Array(27, 176, 177, 178), PackedInt32Array(27, 178, 28), PackedInt32Array(179, 96, 99, 180), PackedInt32Array(78, 77, 181, 182), PackedInt32Array(183, 26, 184, 185, 186, 187), PackedInt32Array(188, 85, 84, 189), PackedInt32Array(190, 191, 67, 68, 192), PackedInt32Array(58, 61, 193, 194), PackedInt32Array(195, 8, 196, 197), PackedInt32Array(198, 199, 200, 201), PackedInt32Array(57, 56, 202, 203), PackedInt32Array(14, 13, 204, 205), PackedInt32Array(206, 44, 49, 207, 208), PackedInt32Array(94, 41, 40, 209), PackedInt32Array(179, 180, 210, 211), PackedInt32Array(212, 213, 214, 215, 216), PackedInt32Array(217, 15, 17, 218), PackedInt32Array(219, 220, 221, 222, 223, 224), PackedInt32Array(225, 56, 55), PackedInt32Array(226, 225, 55, 227), PackedInt32Array(228, 162, 161, 229), PackedInt32Array(230, 83, 82, 231), PackedInt32Array(230, 231, 232, 233), PackedInt32Array(234, 233, 232, 235), PackedInt32Array(236, 211, 210, 237), PackedInt32Array(238, 157, 158, 239, 240), PackedInt32Array(236, 237, 241, 242), PackedInt32Array(243, 244, 245, 246), PackedInt32Array(247, 69, 72, 248), PackedInt32Array(72, 249, 248), PackedInt32Array(250, 251, 252, 253, 254), PackedInt32Array(255, 256, 257, 258), PackedInt32Array(26, 25, 184), PackedInt32Array(259, 260, 261, 262), PackedInt32Array(263, 264, 265, 254, 253), PackedInt32Array(266, 267, 268, 269), PackedInt32Array(270, 271, 272, 273, 274), PackedInt32Array(275, 276, 277, 278), PackedInt32Array(279, 280, 281, 282), PackedInt32Array(283, 284, 152, 156, 222), PackedInt32Array(285, 286, 287, 288, 289, 290, 291), PackedInt32Array(38, 292, 293, 294), PackedInt32Array(295, 296, 297, 298), PackedInt32Array(298, 297, 299, 300, 301, 302), PackedInt32Array(303, 288, 304, 305, 306), PackedInt32Array(118, 307, 308, 114), PackedInt32Array(309, 310, 311, 312, 313), PackedInt32Array(314, 315, 316, 317), PackedInt32Array(318, 319, 314, 320), PackedInt32Array(321, 322, 323, 324), PackedInt32Array(325, 326, 327, 328, 329), PackedInt32Array(330, 7, 6, 331, 332, 333), PackedInt32Array(334, 330, 333, 335, 336), PackedInt32Array(337, 338, 136), PackedInt32Array(339, 62, 65, 340, 341), PackedInt32Array(274, 273, 342, 343, 344), PackedInt32Array(345, 346, 347, 264), PackedInt32Array(172, 348, 349, 350), PackedInt32Array(351, 352, 353, 36), PackedInt32Array(329, 354, 355, 356, 325), PackedInt32Array(357, 358, 359, 360), PackedInt32Array(361, 362, 363, 364), PackedInt32Array(365, 269, 268, 366, 247, 248, 367, 35, 38), PackedInt32Array(9, 368, 369, 5), PackedInt32Array(196, 8, 7, 370), PackedInt32Array(371, 370, 7, 372), PackedInt32Array(373, 371, 372, 374, 375), PackedInt32Array(376, 377, 266, 269), PackedInt32Array(377, 376, 378), PackedInt32Array(379, 377, 378, 380), PackedInt32Array(379, 380, 381, 382), PackedInt32Array(112, 382, 381, 113), PackedInt32Array(383, 368, 384, 251, 250), PackedInt32Array(150, 385, 386), PackedInt32Array(2, 1, 135, 134), PackedInt32Array(133, 135, 387), PackedInt32Array(133, 387, 329, 328), PackedInt32Array(388, 325, 356, 389), PackedInt32Array(388, 389, 390, 391), PackedInt32Array(392, 391, 390, 393), PackedInt32Array(394, 111, 110, 395), PackedInt32Array(394, 395, 396, 397), PackedInt32Array(398, 397, 396, 399), PackedInt32Array(398, 399, 400, 401), PackedInt32Array(227, 401, 400, 242, 241), PackedInt32Array(226, 227, 241), PackedInt32Array(250, 402, 383), PackedInt32Array(383, 403, 369, 368), PackedInt32Array(404, 405, 406, 407, 408), PackedInt32Array(404, 408, 409, 410, 411), PackedInt32Array(202, 412, 186, 185, 203), PackedInt32Array(413, 414, 415, 416), PackedInt32Array(160, 417, 418, 419), PackedInt32Array(420, 421, 422, 418), PackedInt32Array(422, 423, 424, 419), PackedInt32Array(418, 422, 419), PackedInt32Array(159, 160, 419, 425), PackedInt32Array(411, 426, 427), PackedInt32Array(428, 429, 421), PackedInt32Array(420, 430, 431, 432), PackedInt32Array(433, 434, 435, 432), PackedInt32Array(263, 436, 345, 264), PackedInt32Array(317, 151, 150, 386, 437, 438, 320, 314), PackedInt32Array(317, 439, 151), PackedInt32Array(440, 441, 442, 443), PackedInt32Array(191, 190, 444), PackedInt32Array(443, 191, 444, 357), PackedInt32Array(192, 445, 446, 447), PackedInt32Array(341, 448, 339), PackedInt32Array(449, 450, 451, 452, 453), PackedInt32Array(454, 455, 228, 229, 456), PackedInt32Array(305, 457, 376, 306), PackedInt32Array(268, 458, 74, 75), PackedInt32Array(291, 459, 460, 285), PackedInt32Array(285, 461, 462, 286), PackedInt32Array(463, 464, 465, 466, 353), PackedInt32Array(258, 467, 182, 181, 468), PackedInt32Array(469, 470, 471, 472), PackedInt32Array(473, 474, 475), PackedInt32Array(213, 476, 214), PackedInt32Array(475, 213, 212, 477), PackedInt32Array(473, 477, 478, 453, 452), PackedInt32Array(479, 480, 481, 482), PackedInt32Array(13, 12, 483, 484, 485), PackedInt32Array(486, 487, 488, 489), PackedInt32Array(216, 490, 212), PackedInt32Array(208, 491, 206), PackedInt32Array(206, 492, 44), PackedInt32Array(493, 494, 495, 302, 301, 496), PackedInt32Array(48, 47, 497, 498, 298), PackedInt32Array(498, 499, 138, 298), PackedInt32Array(139, 500, 295), PackedInt32Array(493, 501, 502), PackedInt32Array(503, 504, 505), PackedInt32Array(506, 507, 508, 509), PackedInt32Array(508, 510, 321, 511), PackedInt32Array(512, 513, 118, 514), PackedInt32Array(118, 117, 515, 516, 517), PackedInt32Array(514, 518, 519, 512), PackedInt32Array(520, 311, 521, 522, 523, 524), PackedInt32Array(525, 526, 324, 323), PackedInt32Array(221, 527, 528, 222), PackedInt32Array(528, 529, 283, 222), PackedInt32Array(43, 530, 531, 532, 39), PackedInt32Array(531, 533, 534, 532), PackedInt32Array(218, 535, 536, 537, 243, 217), PackedInt32Array(246, 538, 217, 243), PackedInt32Array(539, 540, 224, 223), PackedInt32Array(224, 541, 542, 219), PackedInt32Array(509, 543, 544, 545, 506), PackedInt32Array(386, 546, 547, 437), PackedInt32Array(440, 443, 357, 360, 23), PackedInt32Array(23, 360, 19), PackedInt32Array(173, 22, 548, 549), PackedInt32Array(550, 549, 548, 551), PackedInt32Array(550, 551, 552, 30), PackedInt32Array(30, 552, 31), PackedInt32Array(32, 31, 553, 554), PackedInt32Array(555, 554, 553, 556), PackedInt32Array(555, 556, 557, 558), PackedInt32Array(559, 558, 557, 560), PackedInt32Array(559, 560, 561, 562), PackedInt32Array(51, 226, 241, 563), PackedInt32Array(51, 563, 52), PackedInt32Array(431, 53, 52, 433), PackedInt32Array(431, 433, 432), PackedInt32Array(421, 420, 432, 428), PackedInt32Array(564, 428, 432, 565), PackedInt32Array(564, 565, 566, 567), PackedInt32Array(568, 567, 566, 119, 122), PackedInt32Array(534, 536, 535, 198, 201, 532), PackedInt32Array(569, 570, 571, 572, 337), PackedInt32Array(106, 108, 463, 353), PackedInt32Array(36, 353, 466, 37), PackedInt32Array(573, 34, 37, 574), PackedInt32Array(573, 574, 575, 576), PackedInt32Array(577, 576, 575, 578), PackedInt32Array(577, 578, 579, 580), PackedInt32Array(118, 517, 514), PackedInt32Array(235, 512, 519), PackedInt32Array(235, 519, 581), PackedInt32Array(234, 235, 581), PackedInt32Array(310, 234, 581, 311), PackedInt32Array(520, 312, 311), PackedInt32Array(582, 524, 523), PackedInt32Array(523, 583, 350, 349), PackedInt32Array(584, 585, 449, 586), PackedInt32Array(587, 437, 547, 562), PackedInt32Array(337, 137, 588, 589, 569), PackedInt32Array(312, 590, 313), PackedInt32Array(261, 591, 539, 223, 592), PackedInt32Array(425, 593, 159), PackedInt32Array(415, 425, 419, 594), PackedInt32Array(449, 595, 596, 450), PackedInt32Array(208, 207, 597, 493, 502), PackedInt32Array(26, 183, 598), PackedInt32Array(447, 190, 192), PackedInt32Array(599, 447, 446, 341), PackedInt32Array(340, 599, 341), PackedInt32Array(596, 340, 65, 450), PackedInt32Array(600, 582, 523, 601, 602), PackedInt32Array(268, 75, 366), PackedInt32Array(376, 269, 306), PackedInt32Array(288, 303, 289), PackedInt32Array(468, 603, 255, 258), PackedInt32Array(604, 187, 186, 413), PackedInt32Array(298, 138, 139, 295), PackedInt32Array(597, 494, 493), PackedInt32Array(215, 208, 502, 503), PackedInt32Array(216, 215, 503, 505), PackedInt32Array(605, 216, 505, 606), PackedInt32Array(488, 605, 606, 607), PackedInt32Array(488, 607, 489), PackedInt32Array(486, 489, 608), PackedInt32Array(486, 608, 144, 609), PackedInt32Array(609, 144, 145), PackedInt32Array(609, 145, 140, 610), PackedInt32Array(205, 204, 611), PackedInt32Array(481, 205, 611), PackedInt32Array(481, 611, 612), PackedInt32Array(481, 612, 482), PackedInt32Array(479, 482, 485, 484), PackedInt32Array(610, 479, 484, 609), PackedInt32Array(613, 610, 140), PackedInt32Array(613, 140, 141, 169), PackedInt32Array(143, 141, 614), PackedInt32Array(143, 614, 615, 142), PackedInt32Array(363, 142, 615, 616), PackedInt32Array(363, 616, 364), PackedInt32Array(361, 364, 238, 617), PackedInt32Array(343, 194, 193), PackedInt32Array(109, 107, 618, 619), PackedInt32Array(309, 313, 620), PackedInt32Array(602, 309, 620), PackedInt32Array(602, 620, 600), PackedInt32Array(349, 601, 523), PackedInt32Array(172, 350, 170), PackedInt32Array(0, 172, 171, 1), PackedInt32Array(1, 171, 621, 622), PackedInt32Array(622, 621, 525, 623), PackedInt32Array(323, 623, 525), PackedInt32Array(321, 324, 624), PackedInt32Array(60, 59, 625), PackedInt32Array(273, 60, 625), PackedInt32Array(273, 625, 342), PackedInt32Array(271, 270, 626), PackedInt32Array(271, 626, 472, 471), PackedInt32Array(195, 197, 627), PackedInt32Array(375, 195, 627), PackedInt32Array(375, 627, 373), PackedInt32Array(375, 374, 628), PackedInt32Array(336, 375, 628, 334), PackedInt32Array(629, 336, 335), PackedInt32Array(630, 629, 335, 631), PackedInt32Array(630, 631, 275, 632), PackedInt32Array(278, 632, 275), PackedInt32Array(633, 278, 277), PackedInt32Array(545, 633, 277, 634), PackedInt32Array(635, 568, 122, 636), PackedInt32Array(532, 201, 262, 261, 592), PackedInt32Array(337, 136, 137), PackedInt32Array(26, 598, 637), PackedInt32Array(638, 26, 637), PackedInt32Array(638, 637, 639), PackedInt32Array(416, 638, 639, 604, 413), PackedInt32Array(640, 416, 415, 594), PackedInt32Array(640, 594, 641), PackedInt32Array(640, 641, 642, 643), PackedInt32Array(644, 643, 642, 645), PackedInt32Array(644, 645, 646, 647), PackedInt32Array(648, 647, 646, 649), PackedInt32Array(410, 648, 649, 411), PackedInt32Array(404, 411, 427), PackedInt32Array(650, 404, 427, 651), PackedInt32Array(650, 651, 652, 653), PackedInt32Array(654, 653, 652, 635), PackedInt32Array(473, 475, 477), PackedInt32Array(636, 654, 635), PackedInt32Array(655, 636, 122, 656), PackedInt32Array(657, 655, 656, 658), PackedInt32Array(657, 658, 659, 660), PackedInt32Array(660, 659, 661, 662), PackedInt32Array(253, 662, 661, 263), PackedInt32Array(250, 254, 663, 664), PackedInt32Array(665, 664, 663, 279), PackedInt32Array(344, 343, 193, 666), PackedInt32Array(38, 294, 667), PackedInt32Array(365, 38, 667), PackedInt32Array(365, 667, 290, 289), PackedInt32Array(229, 286, 462, 580), PackedInt32Array(229, 580, 579), PackedInt32Array(229, 579, 456), PackedInt32Array(454, 456, 271, 668), PackedInt32Array(669, 468, 181), PackedInt32Array(669, 181, 670, 671), PackedInt32Array(671, 670, 672, 618), PackedInt32Array(618, 672, 619), PackedInt32Array(109, 619, 673), PackedInt32Array(109, 673, 666, 193), PackedInt32Array(344, 666, 469, 674), PackedInt32Array(94, 209, 154), PackedInt32Array(155, 154, 532, 592), PackedInt32Array(624, 219, 542, 511), PackedInt32Array(321, 624, 511), PackedInt32Array(508, 511, 675), PackedInt32Array(508, 675, 509), PackedInt32Array(175, 506, 545, 634, 174), PackedInt32Array(676, 174, 634), PackedInt32Array(676, 634, 665, 677), PackedInt32Array(677, 665, 279, 678), PackedInt32Array(282, 678, 279), PackedInt32Array(679, 282, 281), PackedInt32Array(189, 679, 281, 680), PackedInt32Array(189, 680, 681), PackedInt32Array(188, 189, 681), PackedInt32Array(393, 188, 681, 587, 562), PackedInt32Array(392, 393, 562), PackedInt32Array(239, 392, 562), PackedInt32Array(239, 562, 561), PackedInt32Array(239, 561, 240), PackedInt32Array(238, 240, 617), PackedInt32Array(361, 617, 682, 683), PackedInt32Array(683, 682, 569, 589), PackedInt32Array(21, 337, 572, 18), PackedInt32Array(684, 21, 20), PackedInt32Array(685, 684, 20, 584), PackedInt32Array(586, 685, 584), PackedInt32Array(453, 586, 449), PackedInt32Array(473, 452, 454, 668), PackedInt32Array(471, 668, 271), PackedInt32Array(469, 472, 674)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-5, -5, 3775, -5, 3790, 3225, -5, 3220)])
+cell_size = 32.0
+agent_radius = 8.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vtmaf"]
+size = Vector2(135, 1675)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wpyd2"]
+size = Vector2(67.5, 1675)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fubp2"]
+size = Vector2(3706.875, 63.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bouvu"]
+size = Vector2(50, 3150)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xtj2x"]
+size = Vector2(3595, 70)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_35k4p"]
+shader = ExtResource("9_xjjcp")
+
+[sub_resource type="Animation" id="Animation_kwfgy"]
+resource_name = "SlideDown"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 300)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.49, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_rkr7u"]
+resource_name = "SlideUp"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.033333335, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 300), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.06666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kwfgy"]
+_data = {
+&"SlideDown": SubResource("Animation_kwfgy"),
+&"SlideUp": SubResource("Animation_rkr7u")
+}
+
+[node name="MediumLevel" type="Node2D"]
+
+[node name="Tiles_4" parent="." instance=ExtResource("1_vtmaf")]
+
+[node name="Walls_3" parent="." instance=ExtResource("2_wpyd2")]
+
+[node name="Player_2" parent="." instance=ExtResource("3_fubp2")]
+
+[node name="Map_Box_1" parent="." instance=ExtResource("4_bouvu")]
+
+[node name="ASSETS_MORE_0" parent="." instance=ExtResource("5_xtj2x")]
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_vtmaf")
+
+[node name="Collisions" type="StaticBody2D" parent="NavigationRegion2D"]
+position = Vector2(15, 400)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Collisions"]
+position = Vector2(52.5, 432.5)
+shape = SubResource("RectangleShape2D_vtmaf")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="NavigationRegion2D/Collisions"]
+position = Vector2(26.25, 1985)
+shape = SubResource("RectangleShape2D_wpyd2")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="NavigationRegion2D/Collisions"]
+position = Vector2(1911.5625, 2786.875)
+shape = SubResource("RectangleShape2D_fubp2")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="NavigationRegion2D/Collisions"]
+position = Vector2(3740, 1185)
+shape = SubResource("RectangleShape2D_bouvu")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="NavigationRegion2D/Collisions"]
+position = Vector2(1917.5, -355)
+shape = SubResource("RectangleShape2D_xtj2x")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
+polygon = PackedVector2Array(190, 190, 120, 190, 120, -330, 450, -325, 445, -130, 325, -130, 320, 0, 190, -5)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
+position = Vector2(170, 255)
+polygon = PackedVector2Array(215, -320, 280, -315, 280, -255, 600, -255, 595, -385, 725, -385, 725, -255, 665, -255, 665, -195, 595, -195, 595, -130, 215, -125, 215, 190, 20, 195, 25, 0, 85, 5, 85, -190, 215, -190)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
+position = Vector2(255, 365)
+polygon = PackedVector2Array(195, -175, 195, 340, 260, 335, 260, 530, 390, 530, 390, 660, 510, 655, 510, 405, 450, 405, 450, 340, 380, 340, 385, 140, 455, 145, 450, 80, 645, 75, 645, 145, 710, 145, 710, 210, 895, 205, 895, 75, 1285, 80, 1280, 530, 1410, 525, 1405, 400, 1660, 400, 1660, 275, 1405, 275, 1405, 80, 1725, 80, 1725, -110, 1415, -105, 1415, -40, 895, -40, 895, -170, 835, -170, 835, -105, 770, -105, 770, -40, 575, -45, 575, -110, 505, -110, 510, -170)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
+position = Vector2(255, 365)
+polygon = PackedVector2Array(510, -690, 515, -560, 705, -560, 705, -365, 765, -370, 770, -300, 840, -305, 835, -235, 965, -240, 965, -110, 1340, -110, 1345, -180, 1730, -175, 1730, -300, 1535, -300, 1535, -430, 1345, -425, 1345, -365, 895, -365, 895, -560, 1025, -560, 1025, -625, 1090, -625, 1090, -690)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
+position = Vector2(255, 365)
+polygon = PackedVector2Array(395, -590, 420, -580, 440, -590, 440, -650, 420, -660, 395, -650)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
+position = Vector2(130, 430)
+polygon = PackedVector2Array(395, -590, 420, -580, 440, -590, 440, -650, 420, -660, 395, -650)
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
+position = Vector2(130, 430)
+polygon = PackedVector2Array(1345, -685, 1790, -685, 1790, -620, 2110, -620, 2110, -495, 2300, -495, 2300, -370, 2235, -370, 2235, -170, 2300, -170, 2300, -110, 2235, -110, 2235, -50, 2115, -50, 2110, -240, 1920, -240, 1920, -435, 1730, -435, 1725, -565, 1470, -565, 1470, -625, 1345, -625)
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
+position = Vector2(130, 430)
+polygon = PackedVector2Array(1855, -750, 1855, -685, 2180, -690, 2175, -555, 2560, -560, 2560, -750)
+
+[node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
+position = Vector2(130, 430)
+polygon = PackedVector2Array(2700, -715, 2720, -725, 2740, -710, 2740, -655, 2720, -645, 2700, -650)
+
+[node name="CollisionPolygon2D10" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
+position = Vector2(260, 565)
+polygon = PackedVector2Array(2700, -720, 2720, -730, 2740, -720, 2740, -655, 2720, -645, 2700, -650)
+
+[node name="CollisionPolygon2D11" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
+position = Vector2(260, 565)
+polygon = PackedVector2Array(2240, -305, 2305, -305, 2305, -370, 2365, -370, 2365, -185, 2300, -180, 2300, -245, 2235, -245)
+
+[node name="CollisionPolygon2D12" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
+position = Vector2(260, 565)
+polygon = PackedVector2Array(2240, -625, 2495, -625, 2495, -690, 2555, -690, 2555, -625, 2620, -625, 2620, -565, 2550, -565, 2555, -55, 2430, -55, 2430, -440, 2305, -440, 2300, -505, 2240, -505)
+
+[node name="CollisionPolygon2D13" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
+position = Vector2(260, 565)
+polygon = PackedVector2Array(3450, 710, 3390, 715, 3390, 645, 3325, 645, 3325, 580, 3265, 585, 3265, 460, 3200, 455, 3200, 330, 3135, 330, 3135, 75, 3265, 75, 3265, -375, 2815, -375, 2815, -890, 3455, -890)
+
+[node name="CollisionPolygon2D14" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
+position = Vector2(260, 565)
+polygon = PackedVector2Array(2745, -500, 2620, -500, 2625, -55, 2880, -55, 2880, 75, 3010, 70, 3005, 200, 3065, 200, 3070, 5, 3195, 10, 3195, -310, 2745, -305)
+
+[node name="CollisionPolygon2D15" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
+position = Vector2(260, 565)
+polygon = PackedVector2Array(2625, 15, 2810, 15, 2810, 140, 2940, 140, 2940, 270, 3065, 270, 3070, 395, 3130, 395, 3130, 525, 3195, 525, 3195, 585, 3130, 585, 3130, 650, 3065, 650, 3070, 720, 3005, 715, 3005, 780, 2685, 780, 2685, 655, 2750, 655, 2750, 265, 2685, 265, 2685, 200, 2625, 200)
+
+[node name="CollisionPolygon2D16" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
+position = Vector2(260, 565)
+polygon = PackedVector2Array(960, -50, 1210, -50, 1210, 140, 1015, 135, 1020, 330, 825, 330, 825, 455, 570, 455, 575, 210, 640, 205, 635, 140, 700, 145, 705, 75, 960, 75)
+
+[node name="CollisionPolygon2D17" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
+position = Vector2(260, 565)
+polygon = PackedVector2Array(120, -50, 120, 205, 190, 205, 185, 400, 315, 400, 315, 590, 255, 585, 255, 455, -65, 455, -65, -50)
+
+[node name="CollisionPolygon2D18" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
+position = Vector2(260, 565)
+polygon = PackedVector2Array(-65, 525, 190, 525, 185, 655, 385, 650, 385, 525, 505, 525, 505, 775, 375, 775, 380, 905, 245, 905, 250, 1170, 380, 1165, 380, 1490, 635, 1485, 635, 1740, 320, 1735, 320, 1605, 190, 1610, 190, 1540, 65, 1545, 65, 1290, 0, 1290, 0, 715, -70, 715)
+
+[node name="CollisionPolygon2D19" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
+position = Vector2(260, 565)
+polygon = PackedVector2Array(570, 525, 700, 525, 700, 1170, 765, 1165, 765, 1420, 445, 1420, 445, 1165, 575, 1165, 575, 900, 445, 905, 445, 840, 575, 845)
+
+[node name="CollisionPolygon2D20" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
+position = Vector2(260, 565)
+polygon = PackedVector2Array(890, 840, 765, 840, 765, 525, 900, 525, 895, 390, 1085, 395, 1085, 200, 1215, 205, 1210, 395, 1470, 395, 1470, 265, 1660, 270, 1660, 650, 1475, 650, 1470, 515, 1150, 525, 1150, 650, 890, 650)
+
+[node name="CollisionPolygon2D21" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
+position = Vector2(260, 565)
+polygon = PackedVector2Array(1145, 720, 1150, 845, 1275, 845, 1275, 970, 1145, 970, 1150, 1100, 1020, 1100, 1025, 840, 960, 840, 960, 720)
+
+[node name="CollisionPolygon2D22" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
+position = Vector2(260, 565)
+polygon = PackedVector2Array(955, 910, 955, 1170, 1150, 1165, 1150, 1300, 1340, 1295, 1340, 1740, 700, 1740, 705, 1485, 830, 1485, 830, 1095, 765, 1095, 770, 905)
+
+[node name="CollisionPolygon2D23" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
+position = Vector2(260, 565)
+polygon = PackedVector2Array(1215, 1035, 1345, 1040, 1345, 845, 1475, 845, 1470, 715, 1660, 720, 1660, 975, 2110, 975, 2110, 910, 2235, 910, 2235, 975, 2300, 975, 2300, 1095, 2235, 1095, 2235, 1225, 2045, 1225, 2045, 1480, 1975, 1480, 1975, 1610, 1600, 1610, 1600, 1550, 1665, 1550, 1665, 1485, 1920, 1485, 1920, 1095, 1725, 1095, 1725, 1225, 1215, 1225)
+
+[node name="CollisionPolygon2D24" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
+position = Vector2(260, 565)
+polygon = PackedVector2Array(1660, 1420, 1850, 1420, 1850, 1165, 1790, 1165, 1790, 1295, 1405, 1295, 1405, 1610, 1530, 1610, 1530, 1550, 1465, 1550, 1465, 1350, 1660, 1355)
+
+[node name="CollisionPolygon2D25" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
+position = Vector2(260, 565)
+polygon = PackedVector2Array(1545, 1390, 1570, 1380, 1585, 1395, 1585, 1450, 1565, 1460, 1545, 1450)
+
+[node name="CollisionPolygon2D26" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
+position = Vector2(260, 565)
+polygon = PackedVector2Array(1470, -50, 1470, 15, 1725, 10, 1725, 205, 1980, 200, 1980, 135, 2240, 135, 2240, 200, 2370, 200, 2370, 395, 2495, 395, 2495, 720, 2365, 720, 2365, 775, 2430, 775, 2430, 840, 2555, 840, 2555, 775, 2620, 775, 2620, 585, 2685, 585, 2685, 335, 2615, 330, 2620, 270, 2550, 270, 2555, 10, 2360, 15, 2365, -115, 2300, -115, 2300, -50, 2105, -50, 2105, -115, 1915, -115, 1915, -305, 1790, -305, 1790, -50)
+
+[node name="CollisionPolygon2D27" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
+position = Vector2(260, 565)
+polygon = PackedVector2Array(2880, 845, 3000, 845, 3000, 910, 3065, 910, 3065, 975, 3130, 975, 3130, 1040, 3195, 1035, 3195, 1290, 3070, 1290, 3070, 1095, 2880, 1095)
+
+[node name="CollisionPolygon2D28" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
+position = Vector2(260, 565)
+polygon = PackedVector2Array(2810, 845, 2810, 1170, 3000, 1170, 3000, 1360, 3195, 1360, 3195, 1480, 3130, 1480, 3130, 1680, 3195, 1680, 3195, 1740, 2815, 1740, 2815, 1420, 2880, 1420, 2880, 1225, 2685, 1225, 2685, 1030, 2625, 1035, 2625, 845)
+
+[node name="CollisionPolygon2D29" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
+position = Vector2(260, 565)
+polygon = PackedVector2Array(2430, 910, 2555, 910, 2555, 1035, 2490, 1035, 2490, 1425, 2745, 1420, 2745, 1810, 2810, 1805, 2810, 1865, 2620, 1865, 2620, 2190, 2240, 2190, 2240, 2125, 2365, 2125, 2365, 1935, 2430, 1935, 2430, 1870, 2495, 1870, 2495, 1800, 2555, 1805, 2560, 1605, 2495, 1610, 2495, 1545, 2430, 1545, 2430, 1480, 2365, 1480, 2365, 1420, 2430, 1420, 2430, 1095, 2365, 1095, 2365, 975, 2430, 975)
+
+[node name="CollisionPolygon2D30" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
+position = Vector2(260, 565)
+polygon = PackedVector2Array(3385, 905, 3455, 905, 3455, 2190, 3385, 2190, 3390, 1735, 3260, 1740, 3265, 1675, 3330, 1675, 3325, 1480, 3260, 1480, 3265, 1035, 3325, 1035, 3330, 970, 3390, 975)
+
+[node name="CollisionPolygon2D31" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
+position = Vector2(260, 565)
+polygon = PackedVector2Array(2880, 1800, 3320, 1805, 3325, 2120, 3070, 2120, 3070, 2055, 3065, 2085, 3015, 2085, 3005, 2035, 2805, 2035, 2810, 2080, 2750, 2090, 2750, 2120, 2680, 2125, 2685, 1935, 2875, 1930)
+
+[node name="CollisionPolygon2D32" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
+position = Vector2(260, 565)
+polygon = PackedVector2Array(2570, 1200, 2590, 1190, 2605, 1200, 2605, 1255, 2590, 1265, 2570, 1260)
+
+[node name="CollisionPolygon2D33" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
+position = Vector2(260, 565)
+polygon = PackedVector2Array(2765, 1260, 2785, 1250, 2800, 1260, 2800, 1315, 2785, 1325, 2765, 1320)
+
+[node name="CollisionPolygon2D34" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
+position = Vector2(260, 565)
+polygon = PackedVector2Array(2110, 1295, 2235, 1295, 2235, 1420, 2300, 1420, 2300, 1480, 2235, 1480, 2235, 1545, 2170, 1545, 2170, 1610, 2105, 1610, 2105, 1810, 2170, 1805, 2170, 1875, 2235, 1870, 2235, 1935, 2300, 1935, 2300, 2060, 2240, 2055, 2240, 1990, 1845, 1995, 1850, 2055, 1655, 2055, 1655, 2120, 1600, 2120, 1600, 1995, 1725, 1995, 1725, 1930, 1790, 1935, 1790, 1675, 2050, 1675, 2045, 1550, 2110, 1550)
+
+[node name="CollisionPolygon2D35" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
+position = Vector2(260, 565)
+polygon = PackedVector2Array(1850, 2125, 1850, 2195, 1725, 2195, 1725, 2125)
+
+[node name="CollisionPolygon2D36" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
+position = Vector2(260, 565)
+polygon = PackedVector2Array(1405, 1675, 1725, 1675, 1725, 1870, 1655, 1865, 1660, 1930, 1530, 1930, 1530, 1995, 1410, 1995, 1405, 1865, 1080, 1865, 1080, 1990, 895, 1995, 895, 1925, 700, 1930, 700, 1800, 1410, 1805)
+
+[node name="CollisionPolygon2D37" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
+position = Vector2(260, 565)
+polygon = PackedVector2Array(1280, 2010, 1330, 2010, 1325, 2025, 1275, 2030, 1220, 2030, 1220, 1940, 1245, 1925, 1275, 1940)
+
+[node name="CollisionPolygon2D46" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
+position = Vector2(260, 565)
+polygon = PackedVector2Array(2360, 1700, 2360, 1710, 2245, 1720, 2250, 1705, 2300, 1705, 2300, 1630, 2325, 1615, 2355, 1630)
+
+[node name="CollisionPolygon2D47" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
+position = Vector2(1105, -140)
+polygon = PackedVector2Array(2300, 1655, 2320, 1640, 2340, 1655, 2340, 1710, 2300, 1710)
+
+[node name="CollisionPolygon2D48" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
+position = Vector2(1300, -330)
+polygon = PackedVector2Array(2300, 1655, 2320, 1640, 2340, 1655, 2340, 1710, 2300, 1710)
+
+[node name="CollisionPolygon2D49" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
+position = Vector2(1105, -395)
+polygon = PackedVector2Array(2300, 1655, 2320, 1640, 2340, 1655, 2340, 1710, 2300, 1710)
+
+[node name="CollisionPolygon2D50" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
+position = Vector2(275, -590)
+polygon = PackedVector2Array(2290, 1635, 2320, 1605, 2345, 1625, 2350, 1715, 2290, 1710)
+
+[node name="CollisionPolygon2D51" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
+position = Vector2(275, -590)
+polygon = PackedVector2Array(2235, 1690, 2275, 1690, 2275, 1705, 2235, 1705)
+
+[node name="CollisionPolygon2D38" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
+position = Vector2(260, 565)
+polygon = PackedVector2Array(825, 2000, 825, 2060, 1085, 2065, 1085, 2190, 195, 2195, 190, 2125, 705, 2125, 705, 1995)
+
+[node name="CollisionPolygon2D39" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
+position = Vector2(260, 565)
+polygon = PackedVector2Array(65, 1610, 125, 1610, 125, 1675, 250, 1675, 250, 1805, 635, 1805, 635, 2060, 255, 2055, 255, 1930, 190, 1930, 190, 1860, 125, 1865, 125, 1845, 110, 1845, 110, 1835, 80, 1835, 80, 1800, 65, 1805)
+
+[node name="CollisionPolygon2D40" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
+position = Vector2(260, 565)
+polygon = PackedVector2Array(1405, 2060, 1530, 2060, 1530, 2190, 1405, 2190)
+
+[node name="CollisionPolygon2D41" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
+position = Vector2(260, 565)
+polygon = PackedVector2Array(-200, 2125, -135, 2125, -135, 2155, -80, 2155, -80, 2180, -55, 2180, -60, 2150, -15, 2150, -15, 2180, 0, 2180, 0, 2145, 10, 2145, 10, 2155, 30, 2155, 30, 2175, 45, 2175, 45, 2185, -200, 2190)
+
+[node name="CollisionPolygon2D42" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
+position = Vector2(260, 565)
+polygon = PackedVector2Array(70, 2100, 95, 2085, 115, 2105, 115, 2155, 75, 2155)
+
+[node name="CollisionPolygon2D43" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
+position = Vector2(5, 505)
+polygon = PackedVector2Array(70, 2100, 95, 2085, 115, 2105, 115, 2155, 75, 2155)
+
+[node name="CollisionPolygon2D44" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
+position = Vector2(195, 440)
+polygon = PackedVector2Array(70, 2100, 95, 2085, 115, 2105, 115, 2155, 75, 2155)
+
+[node name="CollisionPolygon2D45" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
+position = Vector2(195, 440)
+polygon = PackedVector2Array(-75, 2080, -75, 2100, -105, 2100, -130, 2100, -130, 2050, -70, 2055, -65, 1990, -5, 1990, -5, 1965, 50, 1965, 50, 1940, 5, 1940, -5, 1940, -5, 1925, 60, 1925, 60, 1480, 0, 1480, -5, 1160, -135, 1160, -145, 2125, -135, 2120, -140, 2105, -75, 2105)
+
+[node name="CollisionPolygon2D52" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
+polygon = PackedVector2Array(1985, 835, 1985, 1470, 2305, 1470, 2305, 1410, 2495, 1405, 2495, 1345, 2555, 1340, 2555, 1280, 2430, 1275, 2435, 960, 2560, 960, 2560, 835, 2500, 830, 2500, 895, 2240, 890, 2240, 830)
+
+[node name="Portal" parent="." instance=ExtResource("8_bouvu")]
+visible = true
+position = Vector2(943, 559)
+collision_mask = 3
+next_level_path = "res://scenes/MediumLevel.tscn"
+
+[node name="SubjectIX" parent="." instance=ExtResource("6_wpyd2")]
+position = Vector2(2596, 2764)
+
+[node name="Camera2D" type="Camera2D" parent="SubjectIX"]
+position = Vector2(14, -24)
+zoom = Vector2(2, 2)
+limit_left = 5
+limit_top = 5
+limit_right = 3785
+limit_bottom = 3225
+limit_smoothed = true
+position_smoothing_enabled = true
+
+[node name="Capsules" type="Node" parent="."]
+
+[node name="Capsule" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2605, 2990)
+
+[node name="Capsule2" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2540, 3055)
+
+[node name="Capsule8" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2285, 3055)
+
+[node name="Capsule11" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2160, 3055)
+
+[node name="Capsule12" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2035, 3055)
+
+[node name="Capsule13" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1965, 3120)
+
+[node name="Capsule14" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1835, 3120)
+
+[node name="Capsule15" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1835, 2995)
+
+[node name="Capsule16" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1900, 2925)
+
+[node name="Capsule17" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1710, 2990)
+
+[node name="Capsule19" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1645, 2925)
+
+[node name="Capsule20" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1645, 3060)
+
+[node name="Capsule21" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1520, 3060)
+
+[node name="Capsule22" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1520, 3060)
+
+[node name="Capsule23" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1580, 3120)
+
+[node name="Capsule24" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1455, 3125)
+
+[node name="Capsule25" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1390, 3055)
+
+[node name="Capsule26" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1455, 2990)
+
+[node name="Capsule27" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1390, 2925)
+
+[node name="Capsule30" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1325, 2990)
+
+[node name="Capsule31" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1200, 2995)
+
+[node name="Capsule32" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1135, 2930)
+
+[node name="Capsule33" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1010, 2925)
+
+[node name="Capsule34" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(940, 2995)
+
+[node name="Capsule35" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(880, 3055)
+
+[node name="Capsule36" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(750, 3055)
+
+[node name="Capsule37" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(625, 3055)
+
+[node name="Capsule38" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(495, 3055)
+
+[node name="Capsule39" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(430, 2990)
+
+[node name="Capsule40" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(430, 3120)
+
+[node name="Capsule41" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(495, 2930)
+
+[node name="Capsule42" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(430, 2865)
+
+[node name="Capsule43" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(365, 2925)
+
+[node name="Capsule44" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(300, 2865)
+
+[node name="Capsule45" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(240, 2930)
+
+[node name="Capsule46" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(170, 2990)
+
+[node name="Capsule47" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(240, 3060)
+
+[node name="Capsule48" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(175, 2865)
+
+[node name="Capsule49" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(300, 2795)
+
+[node name="Capsule50" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(300, 2670)
+
+[node name="Capsule51" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(300, 2540)
+
+[node name="Capsule53" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(495, 2605)
+
+[node name="Capsule54" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(300, 2415)
+
+[node name="Capsule55" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(305, 2285)
+
+[node name="Capsule56" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(235, 2220)
+
+[node name="Capsule57" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(235, 2095)
+
+[node name="Capsule58" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(240, 1970)
+
+[node name="Capsule59" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(110, 1965)
+
+[node name="Capsule60" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(175, 1900)
+
+[node name="Capsule61" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(235, 1835)
+
+[node name="Capsule62" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(110, 1835)
+
+[node name="Capsule63" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(175, 1770)
+
+[node name="Capsule64" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(110, 1710)
+
+[node name="Capsule65" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(235, 1710)
+
+[node name="Capsule66" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(170, 1645)
+
+[node name="Capsule67" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(170, 1520)
+
+[node name="Capsule68" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(240, 1455)
+
+[node name="Capsule69" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(170, 1390)
+
+[node name="Capsule70" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(170, 1260)
+
+[node name="Capsule71" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(170, 1135)
+
+[node name="Capsule72" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(170, 1005)
+
+[node name="Capsule73" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(175, 875)
+
+[node name="Capsule74" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(305, 880)
+
+[node name="Capsule75" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(170, 750)
+
+[node name="Capsule76" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(170, 620)
+
+[node name="Capsule77" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(240, 570)
+
+[node name="Capsule78" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(235, 490)
+
+[node name="Capsule79" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(305, 425)
+
+[node name="Capsule80" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(365, 365)
+
+[node name="Capsule81" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(430, 305)
+
+[node name="Capsule82" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(495, 235)
+
+[node name="Capsule83" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(495, 365)
+
+[node name="Capsule84" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(560, 300)
+
+[node name="Capsule85" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(620, 365)
+
+[node name="Capsule86" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(685, 305)
+
+[node name="Capsule88" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(750, 240)
+
+[node name="Capsule89" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(625, 240)
+
+[node name="Capsule90" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(495, 115)
+
+[node name="Capsule91" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(620, 115)
+
+[node name="Capsule92" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(740, 110)
+
+[node name="Capsule93" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(880, 235)
+
+[node name="Capsule94" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(940, 300)
+
+[node name="Capsule95" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(940, 430)
+
+[node name="Capsule96" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(880, 490)
+
+[node name="Capsule98" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(815, 555)
+
+[node name="Capsule99" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(690, 555)
+
+[node name="Capsule100" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(560, 555)
+
+[node name="Capsule101" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(430, 555)
+
+[node name="Capsule102" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(430, 685)
+
+[node name="Capsule357" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(430, 815)
+
+[node name="Capsule358" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(430, 940)
+
+[node name="Capsule359" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(425, 1075)
+
+[node name="Capsule360" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(495, 1195)
+
+[node name="Capsule361" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(490, 1330)
+
+[node name="Capsule362" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(620, 1455)
+
+[node name="Capsule368" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(750, 1455)
+
+[node name="Capsule369" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(810, 1395)
+
+[node name="Capsule445" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(810, 1260)
+
+[node name="Capsule446" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(810, 1135)
+
+[node name="Capsule447" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(880, 1070)
+
+[node name="Capsule451" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(685, 1010)
+
+[node name="Capsule452" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(750, 945)
+
+[node name="Capsule453" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(815, 880)
+
+[node name="Capsule454" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(940, 1010)
+
+[node name="Capsule455" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1070, 1010)
+
+[node name="Capsule456" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1195, 1010)
+
+[node name="Capsule457" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1200, 880)
+
+[node name="Capsule458" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1330, 880)
+
+[node name="Capsule459" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1455, 880)
+
+[node name="Capsule460" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1515, 1005)
+
+[node name="Capsule448" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(750, 1070)
+
+[node name="Capsule449" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(815, 1010)
+
+[node name="Capsule450" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(880, 945)
+
+[node name="Capsule370" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(880, 1450)
+
+[node name="Capsule371" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(815, 1520)
+
+[node name="Capsule372" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(815, 1650)
+
+[node name="Capsule373" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(815, 1775)
+
+[node name="Capsule374" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(685, 1775)
+
+[node name="Capsule375" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(685, 1905)
+
+[node name="Capsule384" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(560, 1905)
+
+[node name="Capsule376" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(815, 1905)
+
+[node name="Capsule377" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(750, 1965)
+
+[node name="Capsule378" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(815, 2030)
+
+[node name="Capsule379" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(755, 2095)
+
+[node name="Capsule380" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(690, 2030)
+
+[node name="Capsule381" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(625, 2095)
+
+[node name="Capsule385" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(685, 2160)
+
+[node name="Capsule386" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(685, 2285)
+
+[node name="Capsule387" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(685, 2415)
+
+[node name="Capsule388" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(815, 2415)
+
+[node name="Capsule389" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1010, 2415)
+
+[node name="Capsule390" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1070, 2355)
+
+[node name="Capsule391" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1070, 2220)
+
+[node name="Capsule392" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1070, 2095)
+
+[node name="Capsule393" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1005, 2030)
+
+[node name="Capsule394" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1005, 1905)
+
+[node name="Capsule395" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1070, 1835)
+
+[node name="Capsule397" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1195, 1840)
+
+[node name="Capsule461" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1195, 1710)
+
+[node name="Capsule462" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1260, 1650)
+
+[node name="Capsule463" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1390, 1650)
+
+[node name="Capsule398" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1260, 1905)
+
+[node name="Capsule399" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1260, 2030)
+
+[node name="Capsule400" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1330, 2095)
+
+[node name="Capsule401" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1450, 2095)
+
+[node name="Capsule402" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1455, 1970)
+
+[node name="Capsule403" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1585, 1965)
+
+[node name="Capsule406" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1580, 1840)
+
+[node name="Capsule407" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1645, 1770)
+
+[node name="Capsule408" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1710, 1710)
+
+[node name="Capsule410" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1515, 1775)
+
+[node name="Capsule411" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1455, 1710)
+
+[node name="Capsule413" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1455, 1585)
+
+[node name="Capsule418" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1520, 1520)
+
+[node name="Capsule464" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1645, 1520)
+
+[node name="Capsule417" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1710, 1580)
+
+[node name="Capsule419" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1775, 1645)
+
+[node name="Capsule420" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1900, 1645)
+
+[node name="Capsule428" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1965, 1585)
+
+[node name="Capsule429" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1965, 1455)
+
+[node name="Capsule431" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1840, 1200)
+
+[node name="Capsule432" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1715, 1200)
+
+[node name="Capsule433" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1715, 1325)
+
+[node name="Capsule434" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1585, 1325)
+
+[node name="Capsule435" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1520, 1265)
+
+[node name="Capsule436" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1520, 1135)
+
+[node name="Capsule437" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1390, 1130)
+
+[node name="Capsule438" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1325, 1200)
+
+[node name="Capsule439" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1325, 1325)
+
+[node name="Capsule440" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1200, 1325)
+
+[node name="Capsule441" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1135, 1390)
+
+[node name="Capsule442" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1070, 1455)
+
+[node name="Capsule443" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1005, 1520)
+
+[node name="Capsule444" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1005, 1645)
+
+[node name="Capsule430" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1965, 1330)
+
+[node name="Capsule421" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1965, 1710)
+
+[node name="Capsule422" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1965, 1835)
+
+[node name="Capsule423" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2030, 1905)
+
+[node name="Capsule424" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2160, 1905)
+
+[node name="Capsule425" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2290, 1905)
+
+[node name="Capsule426" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2345, 1840)
+
+[node name="Capsule427" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2475, 1840)
+
+[node name="Capsule404" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1455, 2225)
+
+[node name="Capsule405" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1585, 2220)
+
+[node name="Capsule396" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1005, 1775)
+
+[node name="Capsule382" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(620, 1970)
+
+[node name="Capsule383" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(555, 2030)
+
+[node name="Capsule364" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(365, 1455)
+
+[node name="Capsule365" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(490, 1455)
+
+[node name="Capsule366" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(500, 1585)
+
+[node name="Capsule367" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(620, 1585)
+
+[node name="Capsule363" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(620, 1335)
+
+[node name="Capsule97" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1005, 500)
+
+[node name="Capsule103" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(875, 625)
+
+[node name="Capsule104" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1000, 630)
+
+[node name="Capsule356" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(945, 685)
+
+[node name="Capsule105" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1075, 560)
+
+[node name="Capsule106" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1195, 560)
+
+[node name="Capsule107" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1200, 685)
+
+[node name="Capsule108" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1330, 685)
+
+[node name="Capsule109" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1450, 685)
+
+[node name="Capsule110" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1585, 685)
+
+[node name="Capsule111" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1645, 625)
+
+[node name="Capsule112" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1775, 625)
+
+[node name="Capsule113" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1905, 620)
+
+[node name="Capsule114" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2030, 620)
+
+[node name="Capsule274" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2030, 750)
+
+[node name="Capsule275" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2030, 880)
+
+[node name="Capsule276" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1900, 880)
+
+[node name="Capsule277" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1775, 880)
+
+[node name="Capsule278" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1705, 945)
+
+[node name="Capsule279" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1775, 1005)
+
+[node name="Capsule280" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1900, 1005)
+
+[node name="Capsule281" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1965, 1070)
+
+[node name="Capsule282" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1965, 1200)
+
+[node name="Capsule283" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2095, 1200)
+
+[node name="Capsule284" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2225, 1200)
+
+[node name="Capsule287" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2350, 1200)
+
+[node name="Capsule290" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2480, 1200)
+
+[node name="Capsule291" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2605, 1200)
+
+[node name="Capsule292" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2605, 1200)
+
+[node name="Capsule293" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2605, 1325)
+
+[node name="Capsule294" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2540, 1390)
+
+[node name="Capsule295" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2670, 1390)
+
+[node name="Capsule296" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2735, 1455)
+
+[node name="Capsule297" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2670, 1520)
+
+[node name="Capsule298" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2735, 1585)
+
+[node name="Capsule299" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2670, 1655)
+
+[node name="Capsule300" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2605, 1585)
+
+[node name="Capsule301" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2540, 1650)
+
+[node name="Capsule304" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2600, 1715)
+
+[node name="Capsule305" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2665, 1770)
+
+[node name="Capsule306" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2540, 1770)
+
+[node name="Capsule307" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2605, 1840)
+
+[node name="Capsule308" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2735, 1840)
+
+[node name="Capsule309" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2670, 1905)
+
+[node name="Capsule310" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2540, 1900)
+
+[node name="Capsule311" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2605, 1970)
+
+[node name="Capsule312" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2605, 2095)
+
+[node name="Capsule313" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2545, 2160)
+
+[node name="Capsule314" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2670, 2160)
+
+[node name="Capsule315" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2605, 2225)
+
+[node name="Capsule316" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2670, 2285)
+
+[node name="Capsule317" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2605, 2350)
+
+[node name="Capsule318" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2545, 2290)
+
+[node name="Capsule319" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2480, 2225)
+
+[node name="Capsule320" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2350, 2225)
+
+[node name="Capsule321" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2350, 2350)
+
+[node name="Capsule322" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2350, 2480)
+
+[node name="Capsule323" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2285, 2545)
+
+[node name="Capsule324" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2225, 2610)
+
+[node name="Capsule325" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2095, 2610)
+
+[node name="Capsule326" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2030, 2670)
+
+[node name="Capsule327" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2030, 2795)
+
+[node name="Capsule328" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1965, 2610)
+
+[node name="Capsule329" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1840, 2610)
+
+[node name="Capsule330" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1840, 2480)
+
+[node name="Capsule331" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1905, 2415)
+
+[node name="Capsule332" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1770, 2420)
+
+[node name="Capsule333" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2035, 2415)
+
+[node name="Capsule334" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2160, 2415)
+
+[node name="Capsule335" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2155, 2290)
+
+[node name="Capsule336" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2160, 2160)
+
+[node name="Capsule337" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2095, 2095)
+
+[node name="Capsule338" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2030, 2160)
+
+[node name="Capsule339" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1965, 2225)
+
+[node name="Capsule340" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1840, 2225)
+
+[node name="Capsule341" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1715, 2220)
+
+[node name="Capsule342" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1640, 2290)
+
+[node name="Capsule343" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1645, 2410)
+
+[node name="Capsule344" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1645, 2540)
+
+[node name="Capsule345" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1710, 2605)
+
+[node name="Capsule346" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1645, 2670)
+
+[node name="Capsule347" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1580, 2735)
+
+[node name="Capsule348" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1455, 2735)
+
+[node name="Capsule349" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1325, 2740)
+
+[node name="Capsule350" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1195, 2735)
+
+[node name="Capsule351" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1070, 2735)
+
+[node name="Capsule352" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(940, 2735)
+
+[node name="Capsule409" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(815, 2735)
+
+[node name="Capsule412" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(695, 2735)
+
+[node name="Capsule414" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(555, 2735)
+
+[node name="Capsule355" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(940, 2865)
+
+[node name="Capsule353" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(940, 2605)
+
+[node name="Capsule354" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(940, 2480)
+
+[node name="Capsule302" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2480, 1585)
+
+[node name="Capsule303" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2475, 1460)
+
+[node name="Capsule115" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2030, 495)
+
+[node name="Capsule116" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1965, 430)
+
+[node name="Capsule117" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1840, 430)
+
+[node name="Capsule118" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1840, 300)
+
+[node name="Capsule119" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1715, 300)
+
+[node name="Capsule120" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1580, 300)
+
+[node name="Capsule121" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1520, 365)
+
+[node name="Capsule122" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1455, 305)
+
+[node name="Capsule123" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1520, 240)
+
+[node name="Capsule124" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1390, 370)
+
+[node name="Capsule125" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1325, 305)
+
+[node name="Capsule126" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1260, 370)
+
+[node name="Capsule127" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1200, 305)
+
+[node name="Capsule128" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1260, 240)
+
+[node name="Capsule129" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1325, 175)
+
+[node name="Capsule130" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1390, 240)
+
+[node name="Capsule131" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1455, 170)
+
+[node name="Capsule132" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1390, 110)
+
+[node name="Capsule133" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1520, 110)
+
+[node name="Capsule134" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1650, 110)
+
+[node name="Capsule135" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1775, 110)
+
+[node name="Capsule136" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1900, 110)
+
+[node name="Capsule137" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1965, 175)
+
+[node name="Capsule138" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2095, 175)
+
+[node name="Capsule139" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2220, 175)
+
+[node name="Capsule140" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2285, 240)
+
+[node name="Capsule141" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2350, 300)
+
+[node name="Capsule142" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2475, 300)
+
+[node name="Capsule143" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2605, 300)
+
+[node name="Capsule144" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2730, 300)
+
+[node name="Capsule145" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2730, 175)
+
+[node name="Capsule146" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2800, 110)
+
+[node name="Capsule147" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2800, 235)
+
+[node name="Capsule148" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2860, 305)
+
+[node name="Capsule149" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2925, 240)
+
+[node name="Capsule150" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2990, 170)
+
+[node name="Capsule151" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2925, 110)
+
+[node name="Capsule153" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3050, 235)
+
+[node name="Capsule154" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3050, 370)
+
+[node name="Capsule155" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2930, 370)
+
+[node name="Capsule156" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2860, 430)
+
+[node name="Capsule157" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2990, 430)
+
+[node name="Capsule158" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3055, 500)
+
+[node name="Capsule159" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2860, 565)
+
+[node name="Capsule160" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3055, 625)
+
+[node name="Capsule161" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3180, 625)
+
+[node name="Capsule162" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3310, 625)
+
+[node name="Capsule163" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3435, 620)
+
+[node name="Capsule164" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3500, 685)
+
+[node name="Capsule165" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3500, 815)
+
+[node name="Capsule166" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3500, 945)
+
+[node name="Capsule167" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3440, 1005)
+
+[node name="Capsule168" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3375, 1070)
+
+[node name="Capsule169" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3375, 1195)
+
+[node name="Capsule170" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3375, 1325)
+
+[node name="Capsule171" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3435, 1395)
+
+[node name="Capsule172" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3500, 1455)
+
+[node name="Capsule173" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3500, 1580)
+
+[node name="Capsule174" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3565, 1650)
+
+[node name="Capsule175" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3505, 1710)
+
+[node name="Capsule176" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3570, 1775)
+
+[node name="Capsule177" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3630, 1835)
+
+[node name="Capsule178" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3690, 1770)
+
+[node name="Capsule179" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3505, 1840)
+
+[node name="Capsule180" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3440, 1775)
+
+[node name="Capsule181" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3375, 1710)
+
+[node name="Capsule182" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3315, 1775)
+
+[node name="Capsule183" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3375, 1840)
+
+[node name="Capsule184" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3570, 1900)
+
+[node name="Capsule185" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3500, 1970)
+
+[node name="Capsule186" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3500, 2095)
+
+[node name="Capsule187" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3500, 2220)
+
+[node name="Capsule188" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3500, 2350)
+
+[node name="Capsule189" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3500, 2480)
+
+[node name="Capsule190" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3565, 2540)
+
+[node name="Capsule191" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3435, 2540)
+
+[node name="Capsule192" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3500, 2605)
+
+[node name="Capsule193" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3500, 2735)
+
+[node name="Capsule194" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3630, 2735)
+
+[node name="Capsule195" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3630, 2860)
+
+[node name="Capsule196" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3630, 2990)
+
+[node name="Capsule197" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3630, 3115)
+
+[node name="Capsule198" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3500, 3120)
+
+[node name="Capsule199" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3375, 3120)
+
+[node name="Capsule200" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3250, 3125)
+
+[node name="Capsule202" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3120, 3120)
+
+[node name="Capsule203" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2995, 3120)
+
+[node name="Capsule204" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2925, 3050)
+
+[node name="Capsule205" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2920, 2930)
+
+[node name="Capsule206" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2990, 2865)
+
+[node name="Capsule207" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3115, 2865)
+
+[node name="Capsule208" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3120, 2735)
+
+[node name="Capsule209" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3250, 2735)
+
+[node name="Capsule210" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3370, 2740)
+
+[node name="Capsule211" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3055, 2670)
+
+[node name="Capsule212" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3050, 2545)
+
+[node name="Capsule213" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3050, 2415)
+
+[node name="Capsule214" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3115, 2350)
+
+[node name="Capsule215" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2990, 2350)
+
+[node name="Capsule216" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2925, 2285)
+
+[node name="Capsule219" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2995, 2225)
+
+[node name="Capsule220" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3115, 2225)
+
+[node name="Capsule221" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2925, 2160)
+
+[node name="Capsule222" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2800, 2160)
+
+[node name="Capsule223" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2925, 2030)
+
+[node name="Capsule225" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2800, 2030)
+
+[node name="Capsule226" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2860, 1965)
+
+[node name="Capsule227" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2860, 1840)
+
+[node name="Capsule228" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2925, 1775)
+
+[node name="Capsule238" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2925, 1650)
+
+[node name="Capsule239" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2990, 1585)
+
+[node name="Capsule240" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2990, 1455)
+
+[node name="Capsule241" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2990, 1325)
+
+[node name="Capsule242" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2930, 1265)
+
+[node name="Capsule243" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2930, 1265)
+
+[node name="Capsule244" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2860, 1200)
+
+[node name="Capsule245" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2860, 1075)
+
+[node name="Capsule246" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2860, 940)
+
+[node name="Capsule251" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2860, 815)
+
+[node name="Capsule252" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2860, 690)
+
+[node name="Capsule253" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2735, 945)
+
+[node name="Capsule254" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2670, 880)
+
+[node name="Capsule255" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2670, 750)
+
+[node name="Capsule256" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2670, 625)
+
+[node name="Capsule257" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2605, 555)
+
+[node name="Capsule258" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2540, 625)
+
+[node name="Capsule259" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2480, 560)
+
+[node name="Capsule260" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2545, 495)
+
+[node name="Capsule261" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2415, 495)
+
+[node name="Capsule273" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2480, 430)
+
+[node name="Capsule262" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2415, 625)
+
+[node name="Capsule263" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2475, 690)
+
+[node name="Capsule264" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2540, 750)
+
+[node name="Capsule265" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2410, 750)
+
+[node name="Capsule266" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2480, 815)
+
+[node name="Capsule267" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2605, 815)
+
+[node name="Capsule268" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2540, 880)
+
+[node name="Capsule269" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2415, 875)
+
+[node name="Capsule270" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2290, 815)
+
+[node name="Capsule271" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2220, 750)
+
+[node name="Capsule272" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2160, 620)
+
+[node name="Capsule247" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2990, 945)
+
+[node name="Capsule248" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3115, 945)
+
+[node name="Capsule249" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3115, 1075)
+
+[node name="Capsule250" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3245, 1070)
+
+[node name="Capsule229" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3055, 1775)
+
+[node name="Capsule230" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3115, 1840)
+
+[node name="Capsule231" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3185, 1775)
+
+[node name="Capsule232" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3120, 1970)
+
+[node name="Capsule233" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3115, 2095)
+
+[node name="Capsule234" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3310, 2165)
+
+[node name="Capsule236" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3310, 2285)
+
+[node name="Capsule237" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3435, 2285)
+
+[node name="Capsule235" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(3240, 2095)
+
+[node name="Capsule224" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2865, 2095)
+
+[node name="Capsule217" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2860, 2350)
+
+[node name="Capsule218" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2795, 2290)
+
+[node name="Capsule87" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(750, 365)
+
+[node name="Capsule52" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(430, 2540)
+
+[node name="Capsule28" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1455, 2860)
+
+[node name="Capsule29" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1585, 2865)
+
+[node name="Capsule18" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(1965, 2860)
+
+[node name="Capsule6" parent="Capsules" instance=ExtResource("7_fubp2")]
+position = Vector2(2410, 3055)
+
+[node name="PauseLayer" parent="." instance=ExtResource("14_35k4p")]
+layer = 10
+
+[node name="HUD" parent="." instance=ExtResource("9_xtj2x")]
+
+[node name="MinimapAnchor" type="Control" parent="HUD"]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -228.0
+offset_top = -234.0
+offset_right = -28.0
+offset_bottom = -34.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="HUD/MinimapAnchor"]
+visible = false
+texture_filter = 1
+material = SubResource("ShaderMaterial_35k4p")
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = 100.0
+offset_right = 0.00024414063
+offset_bottom = 300.00043
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="SubViewport" type="SubViewport" parent="HUD/MinimapAnchor/SubViewportContainer"]
+disable_3d = true
+handle_input_locally = false
+canvas_cull_mask = 4294966275
+size = Vector2i(200, 200)
+render_target_update_mode = 0
+
+[node name="MapCam" type="Camera2D" parent="HUD/MinimapAnchor/SubViewportContainer/SubViewport"]
+zoom = Vector2(0.2, 0.2)
+limit_left = 5
+limit_top = 8
+limit_right = 3785
+limit_bottom = 3225
+
+[node name="MiniMapAnimator" type="AnimationPlayer" parent="HUD/MinimapAnchor/SubViewportContainer"]
+callback_mode_process = 0
+libraries = {
+&"": SubResource("AnimationLibrary_kwfgy")
+}
+speed_scale = 2.0
+
+[node name="CooldownTimer" type="Timer" parent="HUD/MinimapAnchor/SubViewportContainer"]
+wait_time = 0.6
+
+[node name="DialogueSystem" parent="." instance=ExtResource("10_lq5nj")]
+layer = 5
+
+[node name="TheCloner" parent="." instance=ExtResource("10_ulnpb")]
+position = Vector2(3495, 1760)
+
+[node name="TheCloner2" parent="." instance=ExtResource("10_ulnpb")]
+position = Vector2(810, 995)
+
+[node name="TheCloner3" parent="." instance=ExtResource("10_ulnpb")]
+position = Vector2(1575, 1630)
+
+[node name="TheCloner4" parent="." instance=ExtResource("10_ulnpb")]
+position = Vector2(2855, 225)
+
+[node name="Power-Ups" type="Node" parent="."]
+
+[node name="SpeedBoost" parent="Power-Ups" instance=ExtResource("11_8i3hw")]
+position = Vector2(3435, 1955)
+
+[node name="SpeedBoost2" parent="Power-Ups" instance=ExtResource("11_8i3hw")]
+position = Vector2(2795, 420)
+
+[node name="SpeedBoost3" parent="Power-Ups" instance=ExtResource("11_8i3hw")]
+position = Vector2(1005, 995)
+
+[node name="SpeedBoost4" parent="Power-Ups" instance=ExtResource("11_8i3hw")]
+position = Vector2(685, 1320)
+
+[node name="SpeedBoost5" parent="Power-Ups" instance=ExtResource("11_8i3hw")]
+position = Vector2(1455, 1895)
+
+[node name="SpeedBoost6" parent="Power-Ups" instance=ExtResource("11_8i3hw")]
+position = Vector2(1835, 1640)
+
+[node name="SpeedBoost7" parent="Power-Ups" instance=ExtResource("11_8i3hw")]
+position = Vector2(1005, 1830)
+
+[node name="SpeedBoost8" parent="Power-Ups" instance=ExtResource("11_8i3hw")]
+position = Vector2(555, 1955)
+
+[node name="SpeedBoost9" parent="Power-Ups" instance=ExtResource("11_8i3hw")]
+position = Vector2(555, 3045)
+
+[node name="SpeedBoost10" parent="Power-Ups" instance=ExtResource("11_8i3hw")]
+position = Vector2(2220, 3045)
+
+[node name="SpeedBoost11" parent="Power-Ups" instance=ExtResource("11_8i3hw")]
+position = Vector2(3053, 3106)
+
+[node name="SpeedBoost12" parent="Power-Ups" instance=ExtResource("11_8i3hw")]
+position = Vector2(108, 1762)
+
+[node name="SpeedBoost13" parent="Power-Ups" instance=ExtResource("11_8i3hw")]
+position = Vector2(3374, 2275)
+
+[node name="SpeedBoost14" parent="Power-Ups" instance=ExtResource("11_8i3hw")]
+position = Vector2(2988, 1765)
+
+[node name="SpeedBoost15" parent="Power-Ups" instance=ExtResource("11_8i3hw")]
+position = Vector2(3119, 1186)
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_d6rps")
+volume_db = -10.0
+autoplay = true
+bus = &"Music"

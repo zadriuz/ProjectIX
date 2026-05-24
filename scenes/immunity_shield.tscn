@@ -1,0 +1,67 @@
+[gd_scene load_steps=10 format=3 uid="uid://6su8s2cgd5ht"]
+
+[ext_resource type="Script" uid="uid://4s2soeldiarg" path="res://scripts/immunity_shield.cpp" id="1_tggra"]
+[ext_resource type="Texture2D" uid="uid://cy3bhogfv5fww" path="res://assets/tryShield.png" id="2_tggra"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tggra"]
+atlas = ExtResource("2_tggra")
+region = Rect2(0, 0, 187, 218)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mdu57"]
+atlas = ExtResource("2_tggra")
+region = Rect2(187, 0, 187, 218)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_movro"]
+atlas = ExtResource("2_tggra")
+region = Rect2(374, 0, 187, 218)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s6svn"]
+atlas = ExtResource("2_tggra")
+region = Rect2(561, 0, 187, 218)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ygdny"]
+atlas = ExtResource("2_tggra")
+region = Rect2(748, 0, 187, 218)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ygdny"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tggra")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mdu57")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_movro")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s6svn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ygdny")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fai15"]
+radius = 20.0
+
+[node name="ImmunityShield" type="Area2D"]
+visibility_layer = 16
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_tggra")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-11.062498, 19)
+scale = Vector2(0.20254014, 0.19266057)
+sprite_frames = SubResource("SpriteFrames_ygdny")
+autoplay = "default"
+frame_progress = 0.60024095
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-13, 19)
+shape = SubResource("CircleShape2D_fai15")

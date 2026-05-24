@@ -1,0 +1,201 @@
+[gd_scene load_steps=5 format=3 uid="uid://gjr55ke18j6l"]
+
+[ext_resource type="Script" uid="uid://d3tdbyetobh40" path="res://scripts/credits_scene.cpp" id="1_1pu23"]
+[ext_resource type="FontFile" uid="uid://i00s4b3n2285" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_ma2dp"]
+[ext_resource type="Texture2D" uid="uid://dl1yorqvsf0cs" path="res://assets/gameTitle.png" id="2_x5wno"]
+[ext_resource type="AudioStream" uid="uid://mvjsikqroqc4" path="res://assets/music/credits.wav" id="4_t4kbm"]
+
+[node name="CreditsScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1pu23")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="LeadDev" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -198.5
+offset_top = -65.5
+offset_right = 198.5
+offset_bottom = -34.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_ma2dp")
+theme_override_font_sizes/font_size = 30
+text = "Lead Developer"
+
+[node name="LabelFranko" type="Label" parent="LeadDev"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -198.5
+offset_top = 64.5
+offset_right = 198.5
+offset_bottom = 95.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.4392157, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_ma2dp")
+theme_override_font_sizes/font_size = 34
+text = "FRANKO DARIUS DRE Q. CEDEÑO"
+
+[node name="Dev" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -198.5
+offset_top = -65.5
+offset_right = 198.5
+offset_bottom = -34.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_ma2dp")
+theme_override_font_sizes/font_size = 30
+text = "Developer"
+horizontal_alignment = 1
+
+[node name="LabelEcho" type="Label" parent="Dev"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -198.5
+offset_top = 64.5
+offset_right = 198.5
+offset_bottom = 95.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.4392157, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_ma2dp")
+theme_override_font_sizes/font_size = 34
+text = "JERICHO M. CAOILE"
+horizontal_alignment = 1
+
+[node name="Designers" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -198.5
+offset_top = -65.5
+offset_right = 198.5
+offset_bottom = -34.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_ma2dp")
+theme_override_font_sizes/font_size = 30
+text = "Designers"
+horizontal_alignment = 1
+
+[node name="LabelAngAnd" type="Label" parent="Designers"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -342.0
+offset_top = 44.5
+offset_right = 342.0
+offset_bottom = 155.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.4392157, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_ma2dp")
+theme_override_font_sizes/font_size = 34
+text = "ANDREA MAE R. CASTILLO
+ANGELO M. BUNDALIAN
+JAMAICA D. CAPITLE"
+horizontal_alignment = 1
+
+[node name="Contributor" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -198.5
+offset_top = -45.5
+offset_right = 198.5
+offset_bottom = -14.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_ma2dp")
+theme_override_font_sizes/font_size = 30
+text = "Contributor"
+horizontal_alignment = 1
+
+[node name="Jhun" type="Label" parent="Contributor"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -342.0
+offset_top = 44.5
+offset_right = 342.0
+offset_bottom = 155.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.4392157, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_ma2dp")
+theme_override_font_sizes/font_size = 34
+text = "JUANITO P. ALVAREZ JR."
+horizontal_alignment = 1
+
+[node name="GameLogo" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.07899305
+anchor_top = 0.36265433
+anchor_right = 0.9375
+anchor_bottom = 0.61651236
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_x5wno")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TransitionTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="CreditsMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_t4kbm")
+bus = &"Music"

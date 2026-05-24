@@ -1,0 +1,162 @@
+[gd_scene load_steps=20 format=3 uid="uid://ce5hx46ngr6a3"]
+
+[ext_resource type="Script" uid="uid://d2ljshrvoag13" path="res://scripts/HUD.cpp" id="1_7hsmw"]
+[ext_resource type="FontFile" uid="uid://i00s4b3n2285" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_nysna"]
+[ext_resource type="Texture2D" uid="uid://gc716twakmq2" path="res://assets/Tech Dungeon Roguelite - Asset Pack (v7)/UI/ui x1.png" id="3_f6qnu"]
+[ext_resource type="Texture2D" uid="uid://dc4mfx7wq5ong" path="res://assets/capsuleBar.png" id="4_k4w17"]
+[ext_resource type="Texture2D" uid="uid://c115e58wog8rx" path="res://assets/gameSettings.png" id="5_nysna"]
+[ext_resource type="AudioStream" uid="uid://dk3gukfc6flmf" path="res://assets/sfx/hover.wav" id="6_k4w17"]
+[ext_resource type="AudioStream" uid="uid://b5r4trgnleq1s" path="res://assets/sfx/select.wav" id="7_twldb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bkydj"]
+atlas = ExtResource("3_f6qnu")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_drrl5"]
+atlas = ExtResource("3_f6qnu")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w6c6j"]
+atlas = ExtResource("3_f6qnu")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w6jga"]
+atlas = ExtResource("3_f6qnu")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bmxf3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bkydj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_drrl5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w6c6j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w6jga")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7hsmw"]
+atlas = ExtResource("4_k4w17")
+region = Rect2(0, 0, 250, 215)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nysna"]
+atlas = ExtResource("4_k4w17")
+region = Rect2(250, 0, 250, 215)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6qnu"]
+atlas = ExtResource("4_k4w17")
+region = Rect2(500, 0, 250, 215)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k4w17"]
+atlas = ExtResource("4_k4w17")
+region = Rect2(750, 0, 250, 215)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_twldb"]
+atlas = ExtResource("4_k4w17")
+region = Rect2(1000, 0, 250, 215)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8cuoo"]
+atlas = ExtResource("4_k4w17")
+region = Rect2(1250, 0, 250, 215)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cf6ij"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7hsmw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nysna")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f6qnu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k4w17")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_twldb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8cuoo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_7hsmw")
+
+[node name="Lives" type="Label" parent="."]
+texture_filter = 1
+offset_left = 87.0
+offset_top = 125.0
+offset_right = 175.0
+offset_bottom = 155.0
+theme_override_fonts/font = ExtResource("2_nysna")
+text = "Lives:"
+
+[node name="Counter" type="Label" parent="."]
+texture_filter = 1
+offset_left = 361.0
+offset_top = 67.0
+offset_right = 451.0
+offset_bottom = 113.0
+theme_override_fonts/font = ExtResource("2_nysna")
+theme_override_font_sizes/font_size = 35
+text = "00"
+
+[node name="ShieldBar" type="AnimatedSprite2D" parent="."]
+position = Vector2(226.25, 135)
+scale = Vector2(2.859375, 2.75)
+sprite_frames = SubResource("SpriteFrames_bmxf3")
+
+[node name="PowerUpActive" type="Label" parent="."]
+texture_filter = 1
+offset_left = 86.0
+offset_top = 171.0
+offset_right = 362.0
+offset_bottom = 201.0
+theme_override_fonts/font = ExtResource("2_nysna")
+text = "Active!"
+
+[node name="CapsuleBar" type="AnimatedSprite2D" parent="."]
+position = Vector2(205, 65)
+scale = Vector2(1.215, 1.215)
+sprite_frames = SubResource("SpriteFrames_cf6ij")
+frame_progress = 0.84734166
+
+[node name="SettingsBtn" type="TextureButton" parent="."]
+process_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -97.0
+offset_top = 30.0
+offset_right = -32.0
+offset_bottom = 93.0
+grow_horizontal = 0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("5_nysna")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="SFX_Hover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_k4w17")
+volume_db = -10.0
+bus = &"SFX"
+
+[node name="SFX_Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_twldb")
+volume_db = -10.0
+bus = &"SFX"

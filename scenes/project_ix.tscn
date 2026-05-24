@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://t4mqeu7ys4g2"]
+
+[ext_resource type="PackedScene" uid="uid://0b5t0jbiv2wa" path="res://scenes/EasyLevel.tscn" id="1_5unmo"]
+
+[node name="ProjectIX" type="Node2D"]
+
+[node name="EasyLevel" parent="." instance=ExtResource("1_5unmo")]

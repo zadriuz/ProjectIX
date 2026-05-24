@@ -1,0 +1,198 @@
+[gd_scene load_steps=26 format=3 uid="uid://coho7jlivbsex"]
+
+[ext_resource type="Script" uid="uid://dlvbxm6mwaloq" path="res://scripts/subject_ix.cpp" id="1_8ewla"]
+[ext_resource type="Texture2D" uid="uid://b7q6vrbpll7lw" path="res://assets/Tech Dungeon Roguelite - Asset Pack (v7)/Players/No Outlines/players blue x1 LEFT.png" id="1_uiiu1"]
+[ext_resource type="Texture2D" uid="uid://b241b54528jaj" path="res://assets/Tech Dungeon Roguelite - Asset Pack (v7)/Players/No Outlines/players blue x1.png" id="2_8ewla"]
+[ext_resource type="Shader" uid="uid://bjajtdfxnhyj0" path="res://scripts/project_ix.gdshader" id="4_pm00m"]
+[ext_resource type="AudioStream" uid="uid://b8ay2ngjadxsa" path="res://assets/sfx/run_loop.wav" id="5_4hxus"]
+[ext_resource type="AudioStream" uid="uid://1w5empqjubdk" path="res://assets/sfx/collect.wav" id="6_4nt5s"]
+[ext_resource type="AudioStream" uid="uid://1eawaniv01ch" path="res://assets/sfx/hurt.wav" id="7_jmr5u"]
+[ext_resource type="AudioStream" uid="uid://b4trgbrfemjf7" path="res://assets/sfx/explosion.wav" id="8_amgnc"]
+[ext_resource type="AudioStream" uid="uid://dal1i54ddjxo7" path="res://assets/sfx/power_up.wav" id="9_nwlvw"]
+[ext_resource type="AudioStream" uid="uid://muiv526kf3il" path="res://assets/sfx/portal_near.wav" id="10_amgnc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pm00m"]
+atlas = ExtResource("1_uiiu1")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1bsn8"]
+atlas = ExtResource("2_8ewla")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4hxus"]
+atlas = ExtResource("2_8ewla")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4nt5s"]
+atlas = ExtResource("1_uiiu1")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p45hm"]
+atlas = ExtResource("1_uiiu1")
+region = Rect2(128, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jmr5u"]
+atlas = ExtResource("1_uiiu1")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_amgnc"]
+atlas = ExtResource("1_uiiu1")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nwlvw"]
+atlas = ExtResource("1_uiiu1")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v7r62"]
+atlas = ExtResource("2_8ewla")
+region = Rect2(160, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x7qyx"]
+atlas = ExtResource("2_8ewla")
+region = Rect2(192, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h1vpg"]
+atlas = ExtResource("2_8ewla")
+region = Rect2(224, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mea2r"]
+atlas = ExtResource("2_8ewla")
+region = Rect2(256, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_as74x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pm00m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1bsn8")
+}],
+"loop": true,
+"name": &"idle_left",
+"speed": 0.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4hxus")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4nt5s")
+}],
+"loop": true,
+"name": &"idle_right",
+"speed": 0.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p45hm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jmr5u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_amgnc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nwlvw")
+}],
+"loop": true,
+"name": &"walk_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v7r62")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x7qyx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h1vpg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mea2r")
+}],
+"loop": true,
+"name": &"walk_right",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8ewla"]
+radius = 12.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pv6eo"]
+shader = ExtResource("4_pm00m")
+shader_parameter/radius = 0.5730000272175
+shader_parameter/softness = 0.5130000243675
+
+[node name="SubjectIX" type="CharacterBody2D"]
+z_index = 1
+collision_layer = 2
+motion_mode = 1
+script = ExtResource("1_8ewla")
+base_speed = 200
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(11.749998, -44.499996)
+scale = Vector2(2.390625, 2.71875)
+sprite_frames = SubResource("SpriteFrames_as74x")
+animation = &"idle_right"
+autoplay = "idle_right"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(12, -13)
+shape = SubResource("CircleShape2D_8ewla")
+
+[node name="Atmosphere" type="CanvasLayer" parent="."]
+
+[node name="Vignette" type="ColorRect" parent="Atmosphere"]
+material = SubResource("ShaderMaterial_pv6eo")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="EffectTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="ImmunityTimer" type="Timer" parent="."]
+
+[node name="RunSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_4hxus")
+volume_db = -3.0
+pitch_scale = 0.7
+bus = &"SFX"
+
+[node name="CollectSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_4nt5s")
+volume_db = -12.0
+bus = &"SFX"
+
+[node name="HurtSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_jmr5u")
+bus = &"SFX"
+
+[node name="ExplosionSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_amgnc")
+bus = &"SFX"
+
+[node name="PowerUpSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_nwlvw")
+volume_db = -5.0
+bus = &"SFX"
+
+[node name="PortalSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_amgnc")
+volume_db = -5.0
+max_distance = 3000.0
+bus = &"SFX"
+
+[node name="MapIcon" type="ColorRect" parent="."]
+visibility_layer = 2
+offset_left = -12.0
+offset_top = -54.0
+offset_right = 37.0
+offset_bottom = -1.0
+color = Color(2.0214916e-06, 0.8559087, 0.43297827, 1)

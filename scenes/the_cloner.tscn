@@ -1,0 +1,148 @@
+[gd_scene load_steps=19 format=3 uid="uid://dr20uxcy7dqcm"]
+
+[ext_resource type="Script" uid="uid://djxw84cd57i3m" path="res://scripts/cloner.cpp" id="1_fgmmw"]
+[ext_resource type="Texture2D" uid="uid://ecvg7noa81ag" path="res://assets/Tech Dungeon Roguelite - Asset Pack (v7)/Enemies/enemies x1 left.png" id="1_gv74k"]
+[ext_resource type="Texture2D" uid="uid://bysldvcp073g0" path="res://assets/Tech Dungeon Roguelite - Asset Pack (v7)/Enemies/enemies x1.png" id="2_fgmmw"]
+[ext_resource type="Texture2D" uid="uid://g3cvyg423w5e" path="res://assets/exclamation-mark.png" id="4_bkrnt"]
+[ext_resource type="AudioStream" uid="uid://cewy26w8ya5a5" path="res://assets/sfx/cloner.wav" id="5_c01tn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bkrnt"]
+atlas = ExtResource("1_gv74k")
+region = Rect2(288, 384, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c01tn"]
+atlas = ExtResource("2_fgmmw")
+region = Rect2(0, 384, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6l5kk"]
+atlas = ExtResource("1_gv74k")
+region = Rect2(288, 416, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ab37y"]
+atlas = ExtResource("1_gv74k")
+region = Rect2(256, 416, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ppkcv"]
+atlas = ExtResource("1_gv74k")
+region = Rect2(224, 416, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5eoon"]
+atlas = ExtResource("1_gv74k")
+region = Rect2(192, 416, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vy3ux"]
+atlas = ExtResource("2_fgmmw")
+region = Rect2(0, 416, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eulfh"]
+atlas = ExtResource("2_fgmmw")
+region = Rect2(32, 416, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k5qld"]
+atlas = ExtResource("2_fgmmw")
+region = Rect2(64, 416, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e2fqr"]
+atlas = ExtResource("2_fgmmw")
+region = Rect2(96, 416, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rxriv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bkrnt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c01tn")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 0.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6l5kk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ab37y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ppkcv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5eoon")
+}],
+"loop": true,
+"name": &"walk_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vy3ux")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eulfh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k5qld")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e2fqr")
+}],
+"loop": true,
+"name": &"walk_right",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qs6hc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fgmmw"]
+radius = 215.0
+
+[node name="TheCloner" type="CharacterBody2D"]
+visibility_layer = 16
+collision_layer = 8
+motion_mode = 1
+script = ExtResource("1_fgmmw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(9.5, 9.5)
+scale = Vector2(1.59375, 1.59375)
+sprite_frames = SubResource("SpriteFrames_rxriv")
+animation = &"idle"
+autoplay = "idle"
+frame = 1
+frame_progress = 0.2055535
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(10, 25)
+shape = SubResource("CircleShape2D_qs6hc")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="DetectionRadius" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionRadius"]
+position = Vector2(10, 15)
+shape = SubResource("CircleShape2D_fgmmw")
+
+[node name="AlertIcon" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(10, -20)
+scale = Vector2(0.04779413, 0.05514702)
+texture = ExtResource("4_bkrnt")
+
+[node name="DelayTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="StuckCheckTimer" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="FootstepSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_c01tn")
+pitch_scale = 2.0
+max_distance = 600.0
+attenuation = 2.0
+bus = &"SFX"
